@@ -28,7 +28,7 @@ Check the hardware too
 
 Record the controller version, motor controllers, power distribution device,
 radio, and sensors on your robot. Check their connections against the
-instructions for that hardware. The older roboRIO wiring diagrams are not
-Systemcore connection diagrams.
+instructions for that hardware. Systemcore wiring diagrams must match the installed hardware revision.
+See :doc:`step-1/basic-robot-wiring` for the wiring documentation status.
 
 Continue with :doc:`index` for assembly and wiring resources.

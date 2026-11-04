@@ -3,47 +3,25 @@
 Hardware Component Overview
 ===========================
 
+This reference covers components used with Systemcore. For controller setup
+and programming, use WPILib Docs. Component descriptions do not establish
+season eligibility; check the current rules and manufacturer documentation.
+
 .. note::
 
-   For the confirmed 2027 controller changes, see
-   :doc:`/docs/yearly-overview/2027-overview`. Check the hardware version
-   before using a diagram; this overview includes older components.
-
-
-The goal of this document is to provide a brief overview of the hardware components that make up the FRC\ |reg| Control System. Each component will contain a brief description of the component function and a link to more documentation.
-
-.. note:: For wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System </docs/zero-to-robot/step-1/intro-to-frc-robot-wiring>` document.
+   The additions below include devices named in FIRST's
+   `2027 rule preview, Part 2
+   <https://www.firstinspires.org/community-blog/2026-event-robot-rule-preview-for-2027-season-part-2>`_.
+   Check the final season manual for their use on a competition robot.
 
 Overview of Control System
 --------------------------
 
-.. tab-set::
-    .. tab-item:: Basic
-        :sync: basic
+.. note::
 
-        .. figure:: images/frc-control-system-layout-basic.svg
-         :alt: Layout of the core components of the control system and introductory information for them.
-         :width: 600
-
-        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
-
-    .. tab-item:: REV
-        :sync: rev
-
-        .. figure:: images/frc-control-system-layout-rev.svg
-         :alt: Layout of all popular components of the control system including REV Control System Components
-         :width: 600
-
-        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
-
-    .. tab-item:: CTRE
-        :sync: ctre
-
-        .. figure:: images/frc-control-system-layout.svg
-         :alt: Layout of all popular components of the control system including CTRE Control System Components
-         :width: 600
-
-        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+   A Systemcore control-system layout diagram is pending. It will show power
+   distribution, radio, CAN devices, and sensor connections for the installed
+   controller hardware revision.
 
 Limelight Systemcore
 --------------------
@@ -61,7 +39,7 @@ CTRE Power Distribution Panel
   :alt: CTRE Power Distribution Panel
   :width: 500
 
-The :external+wpilib:ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the Systemcore, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf>`__.
+The :external+wpilib:ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. Systemcore power connection instructions for this distribution device are pending; use the controller and distribution-device documentation for the installed revisions. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf>`__.
 
 CTRE Power Distribution Panel 2.0
 ---------------------------------
@@ -70,7 +48,7 @@ CTRE Power Distribution Panel 2.0
   :alt: CTRE Power Distribution Panel 2.0
   :width: 500
 
-The `CTRE Power Distribution Panel 2.0 <https://store.ctr-electronics.com/products/pdp-2>`__ (PDP 2.0) is designed to distribute power from a 12VDC battery to various robot components. The PDP 2.0 features 24 40A channels and can accoommodate ATO breakers. The PDP 2.0 is designed to maximize efficiency.
+The `CTRE Power Distribution Panel 2.0 <https://store.ctr-electronics.com/products/pdp-2>`__ (PDP 2.0) is designed to distribute power from a 12VDC battery to various robot components. The PDP 2.0 features 24 40A channels and can accommodate ATO breakers. The PDP 2.0 is designed to maximize efficiency.
 
 REV Power Distribution Hub
 --------------------------
@@ -90,6 +68,15 @@ AndyMark Power Distribution Board
 
 The `AndyMark Power Distribution Board <https://andymark.com/am-5754>`__ (AMPD) is designed to distribute power from a 12VDC battery to various robot components. The AMPD features 24 fully insulated 40A ports that work with ATO/ATC breakers. With toolless lever connectors and 22.5 degree angled outputs for clean wiring, the AMPD is designed to simplify robot wiring.
 
+Thrifty PowerHub
+----------------
+
+The `Thrifty PowerHub
+<https://www.thethriftybot.com/products/thrifty-powerhub>`_ is a power
+distribution option from The Thrifty Bot. FIRST's preview describes 24
+ATO-sized channels and per-channel current logging over CAN or USB.
+Use the manufacturer instructions for its power connections and configuration.
+
 CTRE Voltage Regulator Module
 -----------------------------
 
@@ -108,6 +95,19 @@ Vivid-Hosting VH-109 Radio
 
 The `Vivid-Hosting VH-109 radio <https://frc-radio.vivid-hosting.net/>`__ is designed specifically for FRC.  It uses Wi-Fi 6E to avoid the common congestion problems that plague 2.4 GHz Wi-Fi networks.  The ruggedized design allows for unfiltered power input coming directly from a power distribution device.  It also has 4 Ethernet ports reducing the need for an additional network switch.
 
+Vivid Technologies VH-109 Robot Radio V2
+----------------------------------------
+
+FIRST's preview introduces the VH-109 Robot Radio V2, with 5 GHz support,
+updated thermal management, and active PoE support. Vivid-Hosting is now
+Vivid Technologies. Match power and configuration instructions to the radio
+version on your robot; V2 power features should not be assumed for V1 or V1.5.
+
+Use the `Vivid radio documentation <https://frc-radio.vivid-hosting.net/>`_
+and the `FIRST preview
+<https://www.firstinspires.org/community-blog/2026-event-robot-rule-preview-for-2027-season-part-2>`_
+when identifying the version and its changes.
+
 120A Circuit Breaker
 --------------------
 
@@ -116,6 +116,14 @@ The `Vivid-Hosting VH-109 radio <https://frc-radio.vivid-hosting.net/>`__ is des
   :width: 500
 
 The 120A Main Circuit Breaker serves two roles on the robot: the main robot power switch and a protection device for downstream robot wiring and components. The 120A circuit breaker is wired to the positive terminals of the robot battery and Power Distribution boards. For more information, please see the `Cooper Bussmann 18X Series Datasheet (PN: 185120F) <https://www.mouser.com/datasheet/2/87/BUS_Tns_DS_18X_CIRCUITBREAKER-515519.pdf>`__
+
+Littelfuse 120A Main Circuit Breaker
+------------------------------------
+
+The `Littelfuse 185120
+<https://www.littelfuse.com/products/fuses-overcurrent-protection/circuit-breakers/box/hi-amp-thermo-plastic-circuit-breakers/0185120-xp>`_
+is another 120A main-breaker option named in FIRST's preview. Check the exact
+part number and manufacturer mounting and connection instructions.
 
 Snap Action Circuit Breakers
 ----------------------------
@@ -144,6 +152,14 @@ CTRE Power Distribution Panel Breakers
 
 The `CTRE Power Distribution Panel Breakers <https://store.ctr-electronics.com/products/auto-resetting-ato-breakers>`__ are auto-reset circuit breakers designed for use with CTRE Power Distribution Panels. They come in 40A, 30A, 20A, and 10A variants. These custom ATO-sized breakers automatically reset after tripping, providing consistent performance even after hundreds of trips.
 
+Thrifty ATO Circuit Breakers
+----------------------------
+
+`Thrifty ATO auto-resetting breakers
+<https://www.thethriftybot.com/products/breakers>`_ come in 10A, 20A, 30A,
+and 40A versions. Select the rating for the circuit and check the distribution
+device's instructions before installation.
+
 Robot Battery
 -------------
 
@@ -158,25 +174,30 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 Robot Signal Light
 ------------------
 
-.. tab-set::
+.. note::
 
-   .. tab-item:: Allen-Bradley
+   Systemcore signal-light wiring and indicator behavior are pending. The
+   connection diagram must match the controller hardware revision.
+
+.. grid:: 1 2 2 2
+   :gutter: 3
+
+   .. grid-item::
 
       .. figure:: images/control-system-hardware/rsl-allenbradley.jpg
-         :alt: Orange Robot Signal Light (Allen-Bradley)
-         :width: 500
+         :alt: Allen-Bradley robot signal light with a red lens.
+         :width: 180
 
-         Allen-Bradley 855PB-B12ME522
+         Allen-Bradley signal light.
 
-   .. tab-item:: AndyMark
+   .. grid-item::
 
       .. figure:: images/control-system-hardware/rsl-andymark.png
-         :alt: Orange Robot Signal Light (AndyMark)
-         :width: 500
+         :alt: Robot signal light with an amber lens.
+         :width: 180
 
-         AndyMark am-3583
+         AndyMark signal light.
 
-The Robot Signal Light (RSL) is required to be either Allen-Bradley 855PB-B12ME522 or AndyMark am-3583.  It is directly controlled by the Systemcore and will flash when enabled and stay solid while disabled.
 
 CTRE Pneumatics Control Module
 ------------------------------
@@ -213,6 +234,15 @@ SPARK MAX Motor Controller
   :width: 400
 
 The `SPARK MAX Motor Controller <https://www.revrobotics.com/rev-11-2158/>`__ is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN, or USB (for configuration/testing only). For more information, see the `SPARK MAX Documentation <https://docs.revrobotics.com/brushless/spark-max/overview>`__.
+
+SPARK Lite Motor Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `REV SPARK Lite (REV-11-3350)
+<https://www.revrobotics.com/rev-11-3350/>`_ controls brushed and brushless
+motors. Its included cables support CAN and PWM connections. Use the SPARK
+Lite instructions for wiring and configuration rather than assuming every
+SPARK MAX feature applies.
 
 TalonFX Motor Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -319,6 +349,15 @@ Koors 40 Brushed DC Motor Controller
 
 The `Koors 40 Brushed DC Motor Controller <https://www.andymark.com/products/koors-40-brushed-dc-motor-controller>`__ is an inexpensive PWM brushed DC motor controller from AndyMark with features such as Ground Loss Protection for PWM, Thermal, and Overcurrent Protection, and Reverse Polarity Protection.
 
+Koors40 CAN Motor Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `AndyMark Koors40 CAN
+<https://andymark.com/products/koors40-brushed-dc-motor-controller>`_ adds
+CAN control to the brushed-motor controller and also accepts PWM. AndyMark
+lists separate PWM-only and CAN + PWM options; check which version you have
+before wiring or writing code.
+
 Servo Hub
 ---------
 
@@ -326,7 +365,7 @@ Servo Hub
   :alt: Servo Hub
   :width: 400
 
-The `Servo Hub <https://www.revrobotics.com/rev-11-1855/>`__ from Rev Robotics can control up to 6 servos. It can output a maximum of 15A across all channels and. The Servo Hub supports USB, RS485 and CAN control.
+The `Servo Hub <https://www.revrobotics.com/rev-11-1855/>`__ from Rev Robotics can control up to 6 servos. It can output a maximum of 15A across all channels. The Servo Hub supports USB, RS485 and CAN control.
 
 Servo Power Module
 ------------------
@@ -335,7 +374,23 @@ Servo Power Module
   :alt: Servo Power Module
   :width: 300
 
-The Servo Power Module from Rev Robotics is capable of powering servos. The Servo Power Module provides up to 90W of 6V power across 6 channels. All control signals are passed through directly from the Systemcore. For more information, see the `Servo Power Module webpage <https://www.revrobotics.com/rev-11-1144/>`__.
+The Servo Power Module from Rev Robotics is capable of powering servos. The Servo Power Module provides up to 90W of 6V power across 6 channels. Servo control signals pass through the module; servo power comes from its power supply. For more information, see the `Servo Power Module webpage <https://www.revrobotics.com/rev-11-1144/>`__.
+
+goBILDA 6V Servo Power Injector
+-------------------------------
+
+The `goBILDA 6V Servo Power Injector (3125-0001-0001)
+<https://www.gobilda.com/6v-servo-power-injector-6-channel-8-15v-input/>`_
+provides servo power for six channels. Follow its documentation for supply
+and signal connections.
+
+Studica Servo Power Block
+-------------------------
+
+The `Studica Servo Power Block (75006)
+<https://www.studica.com/servo-power-block>`_ is another servo-power option
+named in FIRST's preview. Use the manufacturer instructions for its input,
+outputs, and wiring.
 
 Microsoft Lifecam HD3000
 ------------------------

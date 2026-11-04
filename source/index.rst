@@ -1,200 +1,146 @@
-FRC Documentation
-=================
+FIRST Robotics Competition
+==========================
 
-Welcome to the *FIRST* Robotics Competition (FRC) Documentation. Find guides
-for robot hardware, assembly, wiring, troubleshooting, and competition
-preparation.
+Build, wire, and prepare your Systemcore robot. Start with Zero to Robot,
+or jump to the hardware reference you need.
 
-.. note::
+.. container:: frc-home-start
 
-   For software installation and programming, use
-   :external+wpilib:doc:`WPILib documentation <index>`.
+   .. rubric:: Start Here
 
-.. grid:: 1
-   :gutter: 3
+   .. grid:: 1 1 2 2
+      :gutter: 3
 
-   .. grid-item-card::
-      :class-header: sd-bg-success sd-text-white
+      .. grid-item::
+         :columns: 12 12 8 8
 
-      **2027 Robot Overview**
+         .. rubric:: Zero to Robot
 
-      ^^^
+         Assemble your drivetrain, connect the control system, and inspect
+         the robot before moving to software setup.
 
-      Confirmed Systemcore changes and the next steps for your robot.
+         .. button-ref:: docs/zero-to-robot/index
+            :color: primary
 
-      +++
+            Start building →
 
-      .. button-ref:: docs/yearly-overview/2027-overview
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
+         **Returning this season?** Review the
+         :doc:`2027 robot overview <docs/yearly-overview/2027-overview>`
+         before updating your hardware.
 
-         View the 2027 Overview
+      .. grid-item::
+         :columns: 12 12 4 4
 
-.. grid:: 1 2 2 2
-   :gutter: 3
+         .. figure:: docs/controls-overviews/images/control-system-hardware/systemcore.png
+            :alt: Limelight Systemcore robot controller.
+            :width: 260
 
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
+            Systemcore controller. Photo courtesy of Limelight.
 
-      **Zero to Robot**
+.. rubric:: From Build to Driving
 
-      ^^^
+.. grid:: 1 2 4 4
+   :gutter: 2
 
-      Start with kitbot assembly and wiring your robot.
+   .. grid-item-card:: 01 · Build
+      :link: docs/zero-to-robot/step-1/kitbot-starterbot-assembly
+      :link-type: doc
+      :class-card: frc-home-step
 
-      +++
+      Assemble the drivetrain and plan where the electronics will go.
 
-      .. button-ref:: docs/zero-to-robot/index
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
+   .. grid-item-card:: 02 · Wire
+      :link: docs/zero-to-robot/step-1/intro-to-frc-robot-wiring
+      :link-type: doc
+      :class-card: frc-home-step
 
-         Go to Zero to Robot
+      Plan power, motor, and CAN connections for your Systemcore robot.
 
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
+   .. grid-item-card:: 03 · Inspect
+      :link: docs/hardware/hardware-basics/preemptive-troubleshooting
+      :link-type: doc
+      :class-card: frc-home-step
 
-      **Hardware Overview**
+      Check mounting and wiring before powered tests.
 
-      ^^^
+   .. grid-item-card:: 04 · Program →
+      :link: https://docs.wpilib.org/en/latest/docs/zero-to-robot/introduction.html
+      :link-type: url
+      :class-card: frc-home-step frc-home-program
 
-      An overview of the components in the FRC control system.
+      Continue to Robot to Motion in WPILib Docs for software setup and code.
 
-      +++
+The wiring reference marks Systemcore connection details that are still being
+completed. Follow the instructions for your hardware revision.
 
-      .. button-ref:: docs/controls-overviews/control-system-hardware
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
-
-         Go to Hardware Overview
-
-.. grid:: 1 2 2 2
-   :gutter: 3
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Wiring**
-
-      ^^^
-
-      Wiring practices and CAN connections for a reliable robot.
-
-      +++
-
-      .. button-ref:: docs/hardware/hardware-basics/wiring-best-practices
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
-
-         View Wiring Best Practices
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Status Light Quick Reference**
-
-      ^^^
-
-      Identify hardware status lights when troubleshooting your robot.
-
-      +++
-
-      .. button-ref:: docs/hardware/hardware-basics/status-lights-ref
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
-
-         View Status Lights
+.. rubric:: Find a Reference
 
 .. grid:: 1 2 2 2
    :gutter: 3
 
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
+   .. grid-item-card:: Hardware
+      :link: docs/hardware/index
+      :link-type: doc
+      :class-card: frc-home-reference
 
-      **Hardware Tutorials**
+      Find control-system components, motors, sensors, and pneumatics.
 
-      ^^^
+   .. grid-item-card:: Wiring Practices
+      :link: docs/hardware/hardware-basics/wiring-best-practices
+      :link-type: doc
+      :class-card: frc-home-reference
 
-      Learn about motors, pneumatics, sensors, and transmissions.
+      Route cables, add strain relief, and keep connections easy to inspect.
 
-      +++
+   .. grid-item-card:: Status Lights
+      :link: docs/hardware/hardware-basics/status-lights-ref
+      :link-type: doc
+      :class-card: frc-home-reference
 
-      .. button-ref:: docs/hardware/index
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
+      Check component indicators when tracking down a problem.
 
-         View Hardware Articles
+   .. grid-item-card:: Assembly and Testing
+      :link: docs/assembly/index
+      :link-type: doc
+      :class-card: frc-home-reference
 
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
+      Plan access, document the build, and keep a test record.
 
-      **Assembly and Testing**
+   .. grid-item-card:: Competition Preparation
+      :link: docs/competition/index
+      :link-type: doc
+      :class-card: frc-home-reference
 
-      ^^^
+      Prepare your robot, tools, spare parts, and pit for an event.
 
-      Organize assembly, document your build, and test robot systems.
+   .. grid-item-card:: Vendors and Resources
+      :link: docs/vendors/index
+      :link-type: doc
+      :class-card: frc-home-reference
 
-      +++
+      Find manufacturer instructions for the components on your robot.
 
-      .. button-ref:: docs/assembly/index
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
+.. rubric:: Related Documentation
 
-         View Assembly Guide
-
-.. grid:: 1 2 2 2
+.. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
+   .. grid-item-card:: WPILib Docs
+      :link: https://docs.wpilib.org/en/latest/
+      :link-type: url
+      :class-card: frc-home-next
 
-      **Competition Preparation**
+      Set up Systemcore software, write code, simulate, and debug.
 
-      ^^^
+   .. grid-item-card:: FTC Docs
+      :link: https://ftc-docs.firstinspires.org/en/latest/
+      :link-type: url
+      :class-card: frc-site-ftc
 
-      Prepare your robot, tools, and pit for an event.
+      Find FIRST Tech Challenge assembly, wiring, and FTC SDK guides.
 
-      +++
-
-      .. button-ref:: docs/competition/index
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
-
-         View Competition Guide
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Vendors and Resources**
-
-      ^^^
-
-      Find component documentation and additional robot resources.
-
-      +++
-
-      .. button-ref:: docs/vendors/index
-         :color: primary
-         :align: center
-         :expand:
-         :outline:
-
-         View Vendors
+For previous FRC control systems, use the
+`2026 WPILib documentation <https://docs.wpilib.org/en/stable/>`_.
 
 .. toctree::
    :hidden:
@@ -207,17 +153,11 @@ preparation.
 .. toctree::
    :hidden:
    :maxdepth: 2
-   :caption: Build Your Robot
+   :caption: Robot References
 
    docs/hardware/index
    docs/vendors/index
    docs/assembly/index
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-   :caption: Go Compete
-
    docs/competition/index
 
 .. toctree::

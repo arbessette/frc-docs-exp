@@ -4,4 +4,67 @@
 .sidebar-tree > .caption:first-child + ul > .toctree-l1 > ul > .toctree-l2 > input,
 .sidebar-tree > .caption:first-child + ul > .toctree-l1 > ul > .toctree-l2 > label,
 .sidebar-tree > .caption:first-child + ul > .toctree-l1 > ul > .toctree-l2 > ul { display: revert; }
-.sd-card { border-top: 3px solid #009cd7; }
+
+/* Card titles share their card's theme-aware background. This also overrides
+   the fixed light tints on the shared WPILib component styles. */
+.sd-card .sd-card-body .sd-card-title {
+    background: transparent;
+    color: var(--color-foreground-primary);
+}
+
+/* Match the companion cards' subtle borders and background tint. */
+.sd-card.frc-site-ftc {
+    border: 1px solid rgba(224, 112, 0, 0.3);
+    background: color-mix(in srgb, #e07000 6%, var(--color-background-primary));
+}
+.sd-card.frc-site-ftc:hover {
+    border-color: rgba(224, 112, 0, 0.65);
+    box-shadow: 0 2px 8px rgba(224, 112, 0, 0.12);
+}
+
+/* Homepage: blue for the build path and green for software handoffs. */
+.frc-home-start {
+    padding: 1.5rem;
+    margin: 1.25rem 0 2rem;
+    border: 1px solid rgba(0, 156, 215, 0.3);
+    border-left: 4px solid #009cd7;
+    border-radius: 0.65rem;
+    background: color-mix(in srgb, #009cd7 6%, var(--color-background-primary));
+}
+.frc-home-start > .rubric:first-child {
+    color: var(--color-foreground-secondary);
+    font-size: 0.85rem;
+    margin-top: 0;
+}
+.frc-home-start .rubric { font-size: 1.5rem; }
+.frc-home-start figure { margin: 0; }
+.frc-home-start figure img { max-width: 100%; height: auto; }
+.frc-home-start figcaption { font-size: 0.8rem; }
+.sd-card.frc-home-step {
+    border: 1px solid rgba(0, 156, 215, 0.3);
+    border-top: 3px solid #009cd7;
+    background: color-mix(in srgb, #009cd7 5%, var(--color-background-primary));
+}
+.sd-card.frc-home-reference {
+    border-color: rgba(0, 156, 215, 0.25);
+    background: var(--color-background-primary);
+}
+.sd-card.frc-home-next {
+    border-color: rgba(46, 125, 50, 0.35);
+    background: color-mix(in srgb, #2e7d32 6%, var(--color-background-primary));
+}
+.sd-card.frc-home-step.frc-home-next { border-top-color: #2e7d32; }
+.sd-card.frc-home-step:hover,
+.sd-card.frc-home-reference:hover { border-color: #009cd7; }
+.sd-card.frc-home-next:hover { border-color: #2e7d32; }
+@media (max-width: 47.99rem) {
+    .frc-home-start { padding: 1rem; }
+}
+
+/* Program hands off to WPILib Docs. */
+.sd-card.frc-home-step.frc-home-program {
+    border-color: rgba(210, 45, 55, 0.35);
+    border-top-color: #d22d37;
+    background: color-mix(in srgb, #d22d37 6%, var(--color-background-primary));
+}
+.sd-card.frc-home-step.frc-home-program:hover { border-color: #d22d37; }

@@ -1,78 +1,29 @@
-.. include:: <isonum.txt>
-
 Status Light Quick Reference
 ============================
 
+Use the indicator reference for the exact component model and firmware
+installed on your Systemcore robot.
+
+Systemcore
+----------
+
 .. note::
 
-   The roboRIO light patterns below apply to a roboRIO, not Systemcore.
-   For Systemcore, use its display and the documentation for your hardware
-   and image version. See :doc:`/docs/yearly-overview/2027-overview`.
+   The Systemcore LED and display reference is pending. Do not infer controller
+   faults from another controller's indicator patterns.
 
+See the `WPILib Systemcore introduction
+<https://docs.wpilib.org/en/latest/docs/software/systemcore-info/systemcore-introduction.html>`_ and the
+`WPILib Systemcore imaging guide
+<https://docs.wpilib.org/en/latest/docs/zero-to-robot/step-3/imaging-your-systemcore.html>`_ for the available controller
+and update information.
 
-Many of the components of the FRC\ |reg| Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
+Robot Signal Light
+------------------
 
-A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Status-Light-Reference.pdf>`_ is available.
+.. note::
 
-Robot Signal Light (RSL)
-------------------------
-
-.. image:: images/status-lights/rsl.svg
-  :alt: Robot Signal Light with wiring.
-  :width: 400
-
-+----------+----------------------------------------------------------+
-| Solid ON | Robot On and Disabled                                    |
-+----------+----------------------------------------------------------+
-| Blinking | Robot On and Enabled                                     |
-+----------+----------------------------------------------------------+
-| Off      | Robot Off, roboRIO not powered or RSL not wired properly |
-+----------+----------------------------------------------------------+
-
-roboRIO
--------
-
-.. image:: images/status-lights/roborio-status-lights.svg
-  :alt: roboRIO status lights highlighted.
-  :width: 400
-
-+------------+----------------+-----------------------------------------------------------------------------------+
-| **Power**  | Green          | Power is good                                                                     |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Amber          | Brownout protection tripped, outputs disabled                                     |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Red            | Power fault, check user rails for short circuit                                   |
-+------------+----------------+-----------------------------------------------------------------------------------+
-| **Status** | On while the controller is booting, then should turn off                                           |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | 2 blinks       | Software error, reimage roboRIO                                                   |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | 3 blinks       | Safe Mode, restart roboRIO, reimage if not resolved                               |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | 4 blinks       | Software crashed twice without rebooting, reboot roboRIO, reimage if not resolved |
-|            +----------------+---------------------------+-------------------------------------------------------+
-|            | Constant flash or stays solid on           | Unrecoverable error                                   |
-+------------+--------------------------------------------+-------------------------------------------------------+
-| **Radio**  | Not currently implemented                                                                          |
-+------------+----------------+-----------------------------------------------------------------------------------+
-| **Comm**   | Off            | No Communication                                                                  |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Red Solid      | Communication with DS, but no user code running                                   |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Red Blinking   | E-stop triggered                                                                  |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Green Solid    | Good communications with DS                                                       |
-+------------+----------------+-----------------------------------------------------------------------------------+
-| **Mode**   | Off            | Outputs disabled (robot in Disabled, brown-out, etc.)                             |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Orange         | Autonomous Enabled                                                                |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Green          | Teleop Enabled                                                                    |
-|            +----------------+-----------------------------------------------------------------------------------+
-|            | Red            | Test Enabled                                                                      |
-+------------+----------------+-----------------------------------------------------------------------------------+
-| **RSL**    | `See above <#robot-signal-light-rsl>`_                                                             |
-+------------+----------------------------------------------------------------------------------------------------+
+   Systemcore signal-light connections and status patterns are pending.
 
 Vivid-Hosting VH-109 Radio
 --------------------------
@@ -112,39 +63,11 @@ Vivid-Hosting VH-109 Radio
 Power Distribution Panel
 ------------------------
 
-.. image:: images/status-lights/pdp-status-lights.svg
-  :alt: The location of the "STAT" and "COMM" lights on the PDP.
-  :width: 600
+.. note::
 
-PDP Status/Comm LEDs
-^^^^^^^^^^^^^^^^^^^^
-
-+--------+--------------------------+---------------------------+
-| LED    | Strobe                   | Slow                      |
-+========+==========================+===========================+
-| Green  | No Fault - Robot Enabled | No Fault - Robot Disabled |
-+--------+--------------------------+---------------------------+
-| Orange | NA                       | Sticky Fault              |
-+--------+--------------------------+---------------------------+
-| Red    | NA                       | No CAN Comm               |
-+--------+--------------------------+---------------------------+
-
-.. tip:: If a PDP LED is showing more than one color, see the PDP LED special states table below. For more information on resolving PDP faults see the PDP User Manual.
-
-.. note:: Note that the No :external+wpilib:term:`CAN` Comm fault will occur if the PDP cannot communicate with the roboRIO via CAN Bus.
-
-PDP Special States
-^^^^^^^^^^^^^^^^^^
-
-+--------------+------------------------------+
-| LED Colors   | Problem                      |
-+==============+==============================+
-| Red/Orange   | Damaged Hardware             |
-+--------------+------------------------------+
-| Green/Orange | In Bootloader                |
-+--------------+------------------------------+
-| No LED       | No Power/ Incorrect Polarity |
-+--------------+------------------------------+
+   Status indications for this component on a Systemcore installation are
+   pending review. Use the manufacturer's reference for the exact model
+   and firmware.
 
 Power Distribution Hub
 ----------------------
@@ -158,40 +81,35 @@ Power Distribution Hub
 PDH Status LED
 --------------
 
-+-------------------------+--------------------------------------------------------+
-| LED Color               | Status                                                 |
-+=========================+========================================================+
-| Blue Solid              | Device on but no communication established             |
-+-------------------------+--------------------------------------------------------+
-| Green Solid             | Main Communication with roboRIO established            |
-+-------------------------+--------------------------------------------------------+
-| Magenta Blinking        | Keep Alive Timeout                                     |
-+-------------------------+--------------------------------------------------------+
-| Solid Cyan              | Secondary Heartbeat (Connected to REV Hardware Client) |
-+-------------------------+--------------------------------------------------------+
-| Orange/Blue Blinking    | Low Battery                                            |
-+-------------------------+--------------------------------------------------------+
-| Orange/Yellow Blinking  | CAN Fault                                              |
-+-------------------------+--------------------------------------------------------+
-| Orange/Cyan Blinking    | Hardware Fault                                         |
-+-------------------------+--------------------------------------------------------+
-| Orange/Red Blinking     | Fail Safe                                              |
-+-------------------------+--------------------------------------------------------+
-| Orange/Magenta Blinking | Device Over Current                                    |
-+-------------------------+--------------------------------------------------------+
+.. note::
 
-Channel LEDs
-^^^^^^^^^^^^
+   Status indications for this component on a Systemcore installation are
+   pending review. Use the manufacturer's reference for the exact model
+   and firmware.
 
-+--------------+----------------------------------------------------------------------------------------------------------+
-| LED Color    | Status                                                                                                   |
-+==============+==========================================================================================================+
-| Off          | Channel has voltage and is operating as expected                                                         |
-+--------------+----------------------------------------------------------------------------------------------------------+
-| Red Solid    | Channel has NO voltage and there is an active fault. Check for tripped or missing circuit breaker / fuse |
-+--------------+----------------------------------------------------------------------------------------------------------+
-| Red Blinking | Sticky fault on the channel. Check for tripped circuit breaker / fuse.                                   |
-+--------------+----------------------------------------------------------------------------------------------------------+
+PDH Channel LEDs
+----------------
+
+For firmware 21.1.7 and later, REV lists these channel indicators:
+
+.. list-table:: Power Distribution Hub channel indicators
+   :header-rows: 1
+   :widths: 25 75
+
+   * - LED
+     - Meaning
+   * - Off
+     - Channel voltage is present and operation is normal.
+   * - Solid red
+     - No channel voltage; check for a tripped or missing breaker.
+   * - Blinking red
+     - A stored channel fault; check the breaker and clear the fault after
+       resolving the cause.
+
+For the switched channel, check its fuse instead of a breaker. See the
+`REV PDH status LED reference
+<https://docs.revrobotics.com/ion-control/pdh/status-led>`_ for the full patterns
+and firmware scope.
 
 Voltage Regulator Module
 ------------------------
@@ -205,51 +123,11 @@ The status LEDs on the VRM indicate the state of the two power supplies. If the 
 Pneumatics Control Module (PCM)
 -------------------------------
 
-.. image:: images/status-lights/pcm-status-lights.svg
-  :alt: Highlights both the "Status" and "Comp" lights in the middle and the individual channel lights on the sides.
-  :width: 400
+.. note::
 
-PCM Status LED
-^^^^^^^^^^^^^^
-
-+--------+---------------+-------------------------------+------------------+
-| LED    | Strobe        | Slow                          | Long             |
-+========+===============+===============================+==================+
-| Green  | No Fault      | Sticky Fault                  | NA               |
-|        | Robot Enabled |                               |                  |
-+--------+---------------+-------------------------------+------------------+
-| Orange | NA            | Sticky Fault                  | NA               |
-+--------+---------------+-------------------------------+------------------+
-| Red    | NA            | No CAN Comm or Solenoid Fault | Compressor Fault |
-|        |               | (Blinks Solenoid Index)       |                  |
-+--------+---------------+-------------------------------+------------------+
-
-.. tip:: If a PCM LED is showing more than one color, see the PCM LED special states table below. For more information on resolving PCM faults see the PCM User Manual.
-
-.. note:: Note that the No CAN Comm fault will not occur only if the device cannot communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO.
-
-PCM LED Special States Table
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+--------------+-----------------------------+
-| LED          | Problems                    |
-+==============+=============================+
-| Red/Orange   | Damaged Hardware            |
-+--------------+-----------------------------+
-| Green/Orange | In Bootloader               |
-+--------------+-----------------------------+
-| No LED       | No Power/Incorrect Polarity |
-+--------------+-----------------------------+
-
-PCM Comp LED
-^^^^^^^^^^^^
-
-This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.
-
-PCM Solenoid Channel LEDs
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
+   Status indications for this component on a Systemcore installation are
+   pending review. Use the manufacturer's reference for the exact model
+   and firmware.
 
 Pneumatic Hub
 -------------
@@ -520,29 +398,13 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 REV Robotics Servo Hub
 ----------------------
 
-`REV Servo Hub Status LED Patterns <https://docs.revrobotics.com/rev-crossover-products/servo/servo-hub/servo-hub-status-led-patterns>`__
+Use `REV's Servo Hub status LED reference
+<https://docs.revrobotics.com/rev-crossover-products/servo/servo-hub/servo-hub-status-led-patterns>`_
+for the main status light and individual channel indicators. Check the firmware
+scope on that page against the firmware installed on your hub.
 
-General Status LED
-^^^^^^^^^^^^^^^^^^
-
-+-------------------------+----------------------------------------------------------------+
-| LED Color               | Status                                                         |
-+=========================+================================================================+
-| Magenta Blinking        | Powered on but not connected to a controller or                |
-|                         | the REV Hardware Client                                        |
-+-------------------------+----------------------------------------------------------------+
-| Blue Solid              | Connected to REV Hardware Client                               |
-+-------------------------+----------------------------------------------------------------+
-| Solid Cyan              | Connected to a roboRIO or CAN controller                       |
-+-------------------------+----------------------------------------------------------------+
-| Green Solid             | Connected to a Control Hub or RS-485 controller                |
-+-------------------------+----------------------------------------------------------------+
-| Orange/Cyan Blinking    | Battery voltage is lower than 5.5V                             |
-+-------------------------+----------------------------------------------------------------+
-| Orange/Yellow Blinking  | CAN fault detected                                             |
-+-------------------------+----------------------------------------------------------------+
-| Orange/Magenta Blinking | Overcurrent fault                                              |
-+-------------------------+----------------------------------------------------------------+
+The stable WPILib table differs from REV's current reference. Use the
+manufacturer's current definitions when diagnosing this component.
 
 CANCoder Encoder
 ----------------

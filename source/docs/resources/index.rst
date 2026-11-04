@@ -10,5 +10,5 @@ software tools, and control-system setup.
 FRC program resources
 ---------------------
 
-`FIRST FRC resource library <https://www.firstinspires.org/resources/library/frc>`_
+`FIRST FRC resource library <https://www.firstinspires.org/resources/library#first_robotics_competition>`_
 provides a starting point for official competition resources.

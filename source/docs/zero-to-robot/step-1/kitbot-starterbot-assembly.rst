@@ -27,3 +27,12 @@ Before wiring
 For the control-system changes, see
 :doc:`/docs/yearly-overview/2027-overview`. Then use the wiring instructions
 for the components installed on your robot.
+
+Next: Plan the Wiring
+---------------------
+
+After assembly checks, continue to the :doc:`wiring reference
+<intro-to-frc-robot-wiring>` for the Systemcore wiring documentation and its
+current gaps.
+
+:doc:`← Zero to Robot <../index>`

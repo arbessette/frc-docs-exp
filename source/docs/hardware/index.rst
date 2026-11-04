@@ -15,6 +15,7 @@ For component-specific documentation, see :doc:`../vendors/index`.
 
    /docs/controls-overviews/control-system-hardware
    hardware-basics/wiring-best-practices
+   hardware-basics/preemptive-troubleshooting
    hardware-basics/can-wiring-basics
    hardware-basics/status-lights-ref
    hardware-basics/wiring-pneumatics-ph
@@ -28,3 +29,9 @@ For component-specific documentation, see :doc:`../vendors/index`.
    hardware-tutorials/pneumatics
    hardware-tutorials/sensors
    hardware-tutorials/transmissions
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Sensors
+
+   sensors/sensor-overview-hardware

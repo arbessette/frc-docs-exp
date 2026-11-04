@@ -26,3 +26,6 @@ Robot checklist
   anything that needs to be corrected.
 
 For the controller update, see :doc:`../yearly-overview/2027-overview`.
+
+Before testing and after repairs or impacts, complete the
+:doc:`physical inspection checks <../hardware/hardware-basics/preemptive-troubleshooting>`.

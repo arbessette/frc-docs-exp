@@ -1,32 +1,39 @@
 Wiring Pneumatics - REV Pneumatic Hub
 =====================================
 
-This page describes wiring pneumatics with the REV Pneumatic Hub (:external+wpilib:term:`PH`). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (:external+wpilib:term:`PCM`) see :external+wpilib:doc:`this page <docs/hardware/hardware-basics/wiring-pneumatics-pcm>`.
+This page describes the REV Pneumatic Hub component connections.
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here <https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf>`__
 
 .. seealso:: For Pneumatic Hub configuration, firmware updates, and detailed technical specifications, see the `REV Pneumatic Hub Documentation <https://docs.revrobotics.com/ion-control-system/ph>`__.
 
-.. youtube:: uQEiNiHT9fs
+Systemcore Power and CAN Connections
+------------------------------------
 
-----
+.. note::
 
-Wiring Overview
----------------
+   The Systemcore-to-Pneumatic-Hub wiring diagram is pending. It must identify
+   the power distribution connection, CAN connector pinout, and termination
+   for the installed hardware.
 
-A single PH will support most pneumatics applications, providing an output for the compressor, input for a pressure switch, and outputs for up to 16 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the :external+wpilib:term:`CAN` bus and powered via 12V from the PDP/PDH.
+Use the `REV Pneumatic Hub documentation
+<https://docs.revrobotics.com/ion-control-system/ph>`_ for module connections.
+The component instructions below do not replace the pending Systemcore wiring
+procedure.
 
-For complicated robot designs requiring more channels or multiple solenoid voltages, additional PHs, or PCMs can be added to the control system.
+Pneumatic Hub Component Connections
+-----------------------------------
 
-PCM Power and Control Wiring
-----------------------------
+.. figure:: images/wiring-pneumatics-ph/ph-subsystem.png
+   :alt: REV Power Distribution Hub connected to a Pneumatic Hub, compressor, pressure sensors, and solenoids.
+   :width: 650
 
-.. image:: images/wiring-pneumatics-ph/ph-subsystem.png
-   :alt: Pneumatics wiring diagram showing all of the connections to the PH.
+   Pneumatic Hub, power distribution, compressor, pressure sensors, and solenoids.
 
-The first PH on your robot can be wired from the PDP VRM/PCM connectors on the end of the PDP or from a 15A or 20A port on the PDH (20 amp recommended if controlling a compressor). The PH is connected to the roboRIO via CAN and can be placed anywhere in the middle of the CAN chain (or on the end with a custom terminator). For more details on wiring a single PCM, see :ref:`docs/zero-to-robot/step-1/basic-robot-wiring:Step 12: Pneumatics Power (Optional)`
-
-Additional PHs can be wired to a standard WAGO connector on the side of the PDP and protected with a 20A or smaller circuit breaker or to a 15A port on the PDH. Additional PHs should also be placed anywhere in the middle of the CAN chain.
+Use the `REV Pneumatic Hub wiring guide
+<https://docs.revrobotics.com/ion-control/ph/gs/wiring>`_ for the component
+connections. The controller connection and bus termination still need the
+Systemcore instructions for your hardware revision.
 
 The Compressor
 --------------
@@ -41,7 +48,7 @@ The PH has two options for detecting pressure, a digital pressure switch, or an 
 Digital
 ~~~~~~~
 
-A digital pressure switch should be connected directly to the digital pressure sensor input terminals on the PCM. There is no polarity on the input terminals or on the pressure switch itself, either terminal on the PH can be connected to either terminal on the switch. Ring or spade terminals are recommended for the connection to the switch screws (note that the screws are slightly larger than #6, but can be threaded through a ring terminal with a hole for a #6 screw such as the terminals shown in the image).
+A digital pressure switch should be connected directly to the digital pressure sensor input terminals on the PH. There is no polarity on the input terminals or on the pressure switch itself, either terminal on the PH can be connected to either terminal on the switch. Ring or spade terminals are recommended for the connection to the switch screws (note that the screws are slightly larger than #6, but can be threaded through a ring terminal with a hole for a #6 screw such as the terminals shown in the image).
 
 Analog
 ~~~~~~

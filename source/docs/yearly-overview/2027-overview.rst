@@ -21,6 +21,20 @@ for the announcement and `WPILib's Systemcore introduction
 <https://docs.wpilib.org/en/latest/docs/software/systemcore-info/systemcore-introduction.html>`_
 for the controller overview.
 
+Hardware Preview Updates
+------------------------
+
+FIRST's `2027 rule preview, Part 2
+<https://www.firstinspires.org/community-blog/2026-event-robot-rule-preview-for-2027-season-part-2>`_
+names new component options. See the
+:doc:`hardware component overview </docs/controls-overviews/control-system-hardware>`
+for the device entries and manufacturer links.
+
+The preview also removes relays from the approved power-regulating devices,
+adds servo-power options because Systemcore does not power servos directly,
+and calls for COTS connectors on motor circuits. These are preview changes;
+use the season manual for the final requirements.
+
 Preparing your robot
 --------------------
 
@@ -31,10 +45,10 @@ Preparing your robot
 * Follow :doc:`../zero-to-robot/returning` for the software and controller
   update sequence.
 
-The :doc:`older wiring walkthrough
-<../zero-to-robot/step-1/basic-robot-wiring>` and CAN examples use a roboRIO.
-Use them as references for that hardware; Systemcore connections need their
-own instructions.
+Systemcore wiring procedures and diagrams are being prepared. See the
+:doc:`wiring walkthrough <../zero-to-robot/step-1/basic-robot-wiring>` for its
+current status. Use the controller documentation for the installed hardware
+revision; this site does not include previous-controller wiring instructions.
 
 Kitbot and competition resources
 --------------------------------

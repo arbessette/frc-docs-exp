@@ -23,7 +23,7 @@ Unfortunately there are few places in the FRC Control System where redundancy is
 Port Savers
 -----------
 
-For any connections on the Robot or Driver station that may be frequently plugged and unplugged (such as DS joysticks, DS Ethernet, roboRIO USB tether, and Ethernet tether) using a "Port Saver" or "pigtail" can substantially reduce the potential for damaging the port. This type of device can serve double duty, both reducing the number of cycles that the port on the electronic device sees, as well as relocating the connection to a more convenient location. Make sure to secure the port saver (see the next item) to avoid port damage.
+For any connections on the Robot or Driver station that may be frequently plugged and unplugged (such as DS joysticks, DS Ethernet, controller USB connection, and Ethernet tether) using a "Port Saver" or "pigtail" can substantially reduce the potential for damaging the port. This type of device can serve double duty, both reducing the number of cycles that the port on the electronic device sees, as well as relocating the connection to a more convenient location. Make sure to secure the port saver (see the next item) to avoid port damage.
 
 Wire Management and Strain Relief
 ---------------------------------
@@ -52,7 +52,7 @@ Check all wiring and connections
 
 After all wiring on the robot is complete, make sure to check each connection, pulling on each, to ensure that everything is secure. Additionally, ensure that no stray wire "whiskers" are sticking out of any connection point and that no uninsulated connections are exposed. If any connections come loose while testing, or any "whiskers" are discovered, re-make the connection and make sure to have a second person check it when complete.
 
-A common source of poor connections is screw-type or nut-and-bolt fasteners. For any connections of this type on the robot (e.g. battery connections, main breaker, PDP, roboRIO), make sure the fasteners are tight. For nut-and-bolt style connections, ensure that the wire/terminal cannot be rotate by hand; if you can rotate your battery wire or main breaker connection by grasping the terminal and twisting, the connection is not tight enough.
+A common source of poor connections is screw-type or nut-and-bolt fasteners. For any connections of this type on the robot (e.g. battery connections, main breaker, power distribution device), make sure the fasteners are tight. For nut-and-bolt style connections, ensure that the wire/terminal cannot be rotate by hand; if you can rotate your battery wire or main breaker connection by grasping the terminal and twisting, the connection is not tight enough.
 
 Another common source of failures is the fuses at the end of the PDP. Ensure these fuses are completely seated; you may need to apply more force than you expect to seat them completely. If the fuses are seated properly they will likely be difficult or impossible to remove by hand.
 

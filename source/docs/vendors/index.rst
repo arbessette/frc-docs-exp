@@ -13,5 +13,12 @@ Documentation starting points
 * `AndyMark <https://www.andymark.com/>`_
 * `West Coast Products <https://wcproducts.com/>`_
 
+* `The Thrifty Bot documentation <https://docs.thethriftybot.com/>`_
+* `goBILDA servo power injector
+  <https://www.gobilda.com/6v-servo-power-injector-6-channel-8-15v-input/>`_
+* `Studica Servo Power Block <https://www.studica.com/servo-power-block>`_
+* `Littelfuse circuit breakers <https://www.littelfuse.com/>`_
+* `Vivid Technologies radio documentation <https://frc-radio.vivid-hosting.net/>`_
+
 These links are a starting directory. Check the current official rules and
 manufacturer specifications when evaluating a component for a competition robot.

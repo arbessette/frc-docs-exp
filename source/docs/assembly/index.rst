@@ -30,5 +30,7 @@ Follow the applicable manufacturer and WPILib procedures for initial setup.
 Record the test date, subsystem, expected behavior, observed behavior, and
 remaining work. Resolve unexpected behavior before moving to the next stage.
 
-Continue with :doc:`../competition/index` once your team has a repeatable
-inspection, testing, and repair routine.
+Continue with the :doc:`physical inspection checklist
+<../hardware/hardware-basics/preemptive-troubleshooting>` before software setup.
+That page links to Robot to Motion in WPILib Docs. Once the robot has been
+tested, use :doc:`../competition/index` for event preparation.
