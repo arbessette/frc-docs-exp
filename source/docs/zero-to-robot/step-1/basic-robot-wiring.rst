@@ -1,16 +1,16 @@
-FRC Robot Wiring Walkthrough
-============================
+Mounting and Wiring Practices
+=============================
 
 .. note::
 
-   Systemcore instructions are being prepared. This page is not yet a complete
-   wiring or configuration procedure.
+   For Systemcore connections, use the
+   `WPILib wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
 
 Prepare the Electronics Layout
 ------------------------------
 
-Start with the :doc:`four-motor drivetrain reference
-<intro-to-frc-robot-wiring>` and write down the components on your robot.
+Start with the `four-motor drivetrain reference in WPILib
+<{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_ and write down the components on your robot.
 
 * Place the battery, main breaker, power distribution device, Systemcore,
   radio, and motor controllers before cutting cables.
@@ -41,7 +41,7 @@ Use connectors rated for the wires and circuit. Follow their instructions for
 strip length and assembly, and check that each conductor is fully inserted.
 Keep bare strands inside the connector and add strain relief to the cable.
 For SPARK MAX input and motor-output assignments, use the
-:doc:`drivetrain reference <intro-to-frc-robot-wiring>`.
+`WPILib drivetrain reference <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
 
 .. figure:: images/how-to-wire-a-simple-robot/motor-power-wago.jpg
    :alt: Lever connector examples, with a red circle marking a conductor that is not fully inserted.
@@ -65,26 +65,17 @@ against a connector or making future repairs difficult.
 See :doc:`/docs/hardware/hardware-basics/wiring-best-practices` for more on
 labeling, strain relief, and maintenance access.
 
-Systemcore Connections Still to Complete
-----------------------------------------
+Continue: Wire Systemcore
+-------------------------
 
-The Systemcore wiring walkthrough is pending. It needs hardware-revision-specific
-power, CAN termination, Smart I/O, radio, and signal-light instructions,
-with matching diagrams and a connection checklist.
+With the electronics mounted and cable routes planned, continue to the
+`Systemcore wiring guide in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
+It covers the controller connections and links to the inspection checklist
+before you move on to software setup.
 
-Start with the `WPILib Systemcore introduction
-<https://docs.wpilib.org/en/latest/docs/software/systemcore-info/systemcore-introduction.html>`_.
-For controller updates, use the `WPILib Systemcore imaging guide
-<https://docs.wpilib.org/en/latest/docs/zero-to-robot/step-3/imaging-your-systemcore.html>`_.
-For physical inspection, see
-:doc:`/docs/hardware/hardware-basics/preemptive-troubleshooting`.
+.. button-link:: {{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html
+   :color: primary
 
-Next: Inspect the Robot
------------------------
+   Continue to Systemcore wiring →
 
-After completing the wiring using the applicable manufacturer instructions,
-follow the :doc:`physical inspection checklist
-</docs/hardware/hardware-basics/preemptive-troubleshooting>`. Resolve physical
-connection and mounting problems before continuing to software setup.
-
-:doc:`← Wiring reference <intro-to-frc-robot-wiring>`
+:doc:`← Zero to Robot <../index>`

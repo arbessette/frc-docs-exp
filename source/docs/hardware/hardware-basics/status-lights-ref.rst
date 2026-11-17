@@ -4,18 +4,21 @@ Status Light Quick Reference
 Use the indicator reference for the exact component model and firmware
 installed on your Systemcore robot.
 
+The component tables below summarize manufacturer indicator definitions.
+They do not establish Systemcore software compatibility or season eligibility.
+
 Systemcore
 ----------
 
 .. note::
 
-   The Systemcore LED and display reference is pending. Do not infer controller
-   faults from another controller's indicator patterns.
+   Systemcore LED and display information is covered in
+   `WPILib Docs <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#systemcore-status-and-signal-light>`_.
 
 See the `WPILib Systemcore introduction
-<https://docs.wpilib.org/en/latest/docs/software/systemcore-info/systemcore-introduction.html>`_ and the
+<{{ wpilib_docs_url }}docs/software/systemcore-info/systemcore-introduction.html>`_ and the
 `WPILib Systemcore imaging guide
-<https://docs.wpilib.org/en/latest/docs/zero-to-robot/step-3/imaging-your-systemcore.html>`_ for the available controller
+<{{ wpilib_docs_url }}docs/zero-to-robot/step-3/imaging-your-systemcore.html>`_ for the available controller
 and update information.
 
 Robot Signal Light
@@ -23,7 +26,8 @@ Robot Signal Light
 
 .. note::
 
-   Systemcore signal-light connections and status patterns are pending.
+   For Systemcore signal-light connections and status information, use
+   `WPILib Docs <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#systemcore-status-and-signal-light>`_.
 
 Vivid-Hosting VH-109 Radio
 --------------------------
@@ -63,11 +67,29 @@ Vivid-Hosting VH-109 Radio
 Power Distribution Panel
 ------------------------
 
-.. note::
+CTRE's `PDP User's Guide, revision 1.6 (March 28, 2018), page 16
+<https://ctre.download/files/user-manual/PDP%20User%27s%20Guide.pdf>`_
+documents these indicators for the original PDP. Check your model before
+applying them to a newer PDP revision.
 
-   Status indications for this component on a Systemcore installation are
-   pending review. Use the manufacturer's reference for the exact model
-   and firmware.
+.. list-table:: Original PDP diagnostic indicators
+   :header-rows: 1
+   :widths: 35 65
+
+   * - Indicator
+     - Meaning
+   * - Both LEDs unlit
+     - The panel is not receiving power.
+   * - Slowly flashing red
+     - No CAN communication.
+   * - Slowly flashing orange
+     - Disabled state with a stored fault.
+   * - COMM alternating green and orange
+     - Bootloader mode; firmware installation is required.
+
+The manual also distinguishes fast and slow green flashes for enabled and
+disabled operation. Those communication-state patterns have not been verified
+with Systemcore software.
 
 Power Distribution Hub
 ----------------------
@@ -81,11 +103,34 @@ Power Distribution Hub
 PDH Status LED
 --------------
 
-.. note::
+REV's `PDH indicator reference
+<https://docs.revrobotics.com/ion-control/pdh/status-led>`_ documents these
+patterns for firmware 21.1.7 and later:
 
-   Status indications for this component on a Systemcore installation are
-   pending review. Use the manufacturer's reference for the exact model
-   and firmware.
+.. list-table:: Power Distribution Hub status indicators
+   :header-rows: 1
+   :widths: 35 65
+
+   * - LED pattern
+     - Meaning
+   * - Steady blue
+     - Powered, without an established communication link.
+   * - Flashing magenta
+     - Keep-alive messages have timed out.
+   * - Steady cyan
+     - Secondary heartbeat from the REV Hardware Client.
+   * - Alternating orange and blue
+     - Battery voltage is low.
+   * - Alternating orange and yellow
+     - CAN fault.
+   * - Alternating orange and cyan
+     - Hardware fault.
+   * - Alternating orange and magenta
+     - Device overcurrent.
+
+REV describes steady green as communication with the previous robot
+controller. Its reference does not explicitly document that state with
+Systemcore; Systemcore-specific communication behavior still needs verification.
 
 PDH Channel LEDs
 ----------------
@@ -123,11 +168,35 @@ The status LEDs on the VRM indicate the state of the two power supplies. If the 
 Pneumatics Control Module (PCM)
 -------------------------------
 
-.. note::
+These component indicators are summarized from CTRE's
+`PCM User's Guide, revision 1.4 (March 30, 2018), pages 12–15
+<https://ctre.download/files/user-manual/PCM%20User%27s%20Guide.pdf>`_.
+Check the model and firmware before using this reference.
 
-   Status indications for this component on a Systemcore installation are
-   pending review. Use the manufacturer's reference for the exact model
-   and firmware.
+.. list-table:: PCM diagnostic indicators
+   :header-rows: 1
+   :widths: 35 65
+
+   * - Indicator
+     - Meaning
+   * - STATUS unlit
+     - Check input power and polarity.
+   * - STATUS slowly flashing orange
+     - A stored fault remains uncleared, including after a power cycle.
+   * - STATUS flashing red
+     - CAN communication or an output fault; use the manual's blink sequence
+       and fault diagnostics to distinguish them.
+   * - STATUS alternating red and orange
+     - Hardware damage; stop using the module and contact CTRE.
+   * - STATUS alternating green and orange
+     - Bootloader mode.
+   * - COMP green
+     - The compressor output is active.
+   * - A solenoid channel's red LED lit
+     - That solenoid output is active.
+
+The manual also documents green patterns for enabled and disabled operation.
+Their behavior with Systemcore software remains to be verified.
 
 Pneumatic Hub
 -------------
@@ -152,16 +221,17 @@ PH Status LED
 +-------------------------+--------------------------------------------------+
 | Solid Cyan              | Secondary Heartbeat (connected to REV HW Client) |
 +-------------------------+--------------------------------------------------+
-| Orange/Blue Blinking    | Hardware Fault                                   |
+| Orange/Cyan Blinking    | Hardware Fault                                   |
 +-------------------------+--------------------------------------------------+
 | Orange/Yellow Blinking  | CAN Fault                                        |
 +-------------------------+--------------------------------------------------+
-| Orange/Red Blinking     | Fail Safe                                        |
-+-------------------------+--------------------------------------------------+
 | Orange/Magenta Blinking | Device Over Current                              |
 +-------------------------+--------------------------------------------------+
-| Orange/Green Blinking   | Orange/Green Blinking                            |
+| Orange/Green Blinking   | Compressor Over Current                          |
 +-------------------------+--------------------------------------------------+
+
+Source: `REV Pneumatic Hub status LED reference
+<https://docs.revrobotics.com/ion-control/ph/status-led>`_.
 
 Compressor LED
 ^^^^^^^^^^^^^^

@@ -19,9 +19,8 @@ Overview of Control System
 
 .. note::
 
-   A Systemcore control-system layout diagram is pending. It will show power
-   distribution, radio, CAN devices, and sensor connections for the installed
-   controller hardware revision.
+   For the Systemcore layout and controller connections, use the
+   `WPILib wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
 
 Limelight Systemcore
 --------------------
@@ -30,7 +29,7 @@ Limelight Systemcore
   :alt: Limelight Systemcore
   :width: 500
 
-The `Limelight Systemcore <https://docs.wpilib.org/en/latest/docs/software/systemcore-info/systemcore-introduction.html>`_ is the main robot controller used for FRC. The Systemcore serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
+The `Limelight Systemcore <{{ wpilib_docs_url }}docs/software/systemcore-info/systemcore-introduction.html>`_ is the main robot controller used for FRC. The Systemcore serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
 
 CTRE Power Distribution Panel
 -----------------------------
@@ -39,7 +38,7 @@ CTRE Power Distribution Panel
   :alt: CTRE Power Distribution Panel
   :width: 500
 
-The :external+wpilib:ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. Systemcore power connection instructions for this distribution device are pending; use the controller and distribution-device documentation for the installed revisions. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf>`__.
+The :external+wpilib:ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. For the Systemcore supply connection, use the `WPILib wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the `PDP User Manual <https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf>`__.
 
 CTRE Power Distribution Panel 2.0
 ---------------------------------
@@ -176,8 +175,8 @@ Robot Signal Light
 
 .. note::
 
-   Systemcore signal-light wiring and indicator behavior are pending. The
-   connection diagram must match the controller hardware revision.
+   For Systemcore signal-light connections and status information, use
+   `WPILib Docs <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#systemcore-status-and-signal-light>`_.
 
 .. grid:: 1 2 2 2
    :gutter: 3
@@ -207,6 +206,9 @@ CTRE Pneumatics Control Module
   :width: 500
 
 The :external+wpilib:ref:`CTRE Pneumatics Control Module <docs/software/can-devices/pneumatics-control-module:Pneumatics Control Module>` (PCM) contains all of the inputs and outputs required to operate 12V or 24V pneumatic solenoids and the on board compressor. The PCM contains an input for the pressure sensor and will control the compressor automatically when the robot is enabled and a solenoid has been created in the code. For more information see the `PCM User Manual <https://ctre.download/files/user-manual/PCM%20User's%20Guide.pdf>`__.
+
+For compressor, pressure-switch, and solenoid connections, see
+:doc:`/docs/hardware/hardware-basics/wiring-pneumatics-pcm`.
 
 REV Pneumatic Hub
 -----------------

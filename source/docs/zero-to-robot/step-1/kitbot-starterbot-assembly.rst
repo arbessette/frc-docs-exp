@@ -28,11 +28,11 @@ For the control-system changes, see
 :doc:`/docs/yearly-overview/2027-overview`. Then use the wiring instructions
 for the components installed on your robot.
 
-Next: Plan the Wiring
----------------------
+Next: Mount the Electronics
+---------------------------
 
-After assembly checks, continue to the :doc:`wiring reference
-<intro-to-frc-robot-wiring>` for the Systemcore wiring documentation and its
-current gaps.
+Use :doc:`mounting and wiring practices <basic-robot-wiring>` to plan access,
+cable routes, and strain relief. Then continue to
+`Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
 
 :doc:`← Zero to Robot <../index>`

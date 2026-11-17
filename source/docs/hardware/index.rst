@@ -18,6 +18,7 @@ For component-specific documentation, see :doc:`../vendors/index`.
    hardware-basics/preemptive-troubleshooting
    hardware-basics/can-wiring-basics
    hardware-basics/status-lights-ref
+   hardware-basics/wiring-pneumatics-pcm
    hardware-basics/wiring-pneumatics-ph
    hardware-basics/robot-battery
 

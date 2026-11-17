@@ -1,63 +1,49 @@
 Zero to Robot
 =============
 
-Build, wire, and inspect your Systemcore robot here, then continue to WPILib's
-Robot to Motion guide for software setup and your first driving program.
+Build your chassis and mount the components here, then continue to WPILib
+for Systemcore wiring and Robot to Motion.
 
-Before starting, review :doc:`../yearly-overview/2027-overview` and identify the
-hardware revision of your Systemcore and the components installed on your robot.
-Returning teams can use :doc:`returning` to plan their updates.
+Before starting, review :doc:`../yearly-overview/2027-overview`. Returning
+teams can use :doc:`returning` to plan their updates.
 
-1. Assemble Your Robot
-----------------------
+Assemble Your Robot
+-------------------
 
-Use :doc:`step-1/kitbot-starterbot-assembly` for official Kitbot resources and
-assembly checks. See :doc:`../assembly/index` for mounting, access, and build
-records.
+Use :doc:`step-1/kitbot-starterbot-assembly` for Kitbot resources and assembly
+checks. See :doc:`../assembly/index` for mounting, access, and build records.
 
-2. Wire the Control System
---------------------------
+Plan the Electronics Layout
+---------------------------
 
-Use the :doc:`wiring reference <step-1/intro-to-frc-robot-wiring>` to plan the
-connections, then the :doc:`wiring walkthrough <step-1/basic-robot-wiring>`.
-Keep the component model, controller revision, and cable assignments with your
-robot's wiring record.
+Leave room for the battery, main breaker, power distribution, Systemcore,
+radio, and motor controllers. Keep connectors accessible and leave space for
+cable routing. Use :doc:`step-1/basic-robot-wiring` for general mounting and
+wiring practices.
 
-.. note::
+Continue: Wire Systemcore in WPILib
+-----------------------------------
 
-   Systemcore wiring procedures and diagrams are still being completed.
-   The wiring pages identify the missing instructions. Use manufacturer
-   procedures for your actual hardware; placeholders are not wiring steps.
+With the chassis assembled and the components mounted, continue to the
+`Systemcore drivetrain wiring guide in WPILib
+<{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_. It covers the controller connections and leads into
+Robot to Motion for software setup, configuration, and your first program.
 
-3. Inspect Before Software Setup
---------------------------------
+The `wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+links back to our :doc:`physical inspection checklist
+<../hardware/hardware-basics/preemptive-troubleshooting>` before powered tests.
+After inspection, continue with software setup in WPILib.
 
-Complete the :doc:`physical inspection checklist
-<../hardware/hardware-basics/preemptive-troubleshooting>` before powered testing.
-Resolve loose connections, damaged wiring, and mounting problems before
-continuing.
-
-Continue in WPILib: Robot to Motion
-------------------------------------
-
-Once the robot is assembled, wired, and inspected, continue to WPILib for:
-
-* Setting up your programming environment and Driver Station.
-* Updating and configuring Systemcore and the radio.
-* Writing, deploying, and testing your first drivetrain program.
-
-.. button-link:: https://docs.wpilib.org/en/latest/docs/zero-to-robot/introduction.html
+.. button-link:: {{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html
    :color: primary
-   :outline:
 
-   Continue to Robot to Motion →
+   Continue to Systemcore wiring →
 
 .. toctree::
    :maxdepth: 1
-   :caption: Build and Wire
+   :caption: Assembly
 
    step-1/kitbot-starterbot-assembly
-   step-1/intro-to-frc-robot-wiring
    step-1/basic-robot-wiring
 
 .. toctree::

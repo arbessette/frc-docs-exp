@@ -114,12 +114,12 @@ above before moving to software setup and controlled powered tests. Resolve
 inspection problems before enabling the robot.
 
 Use `Robot to Motion in WPILib Docs
-<https://docs.wpilib.org/en/latest/docs/zero-to-robot/introduction.html>`_
+<{{ wpilib_docs_url }}docs/zero-to-robot/introduction.html>`_
 to set up your environment, configure Systemcore, and deploy your first program.
 After testing, use the Driver Station and event checks above to prepare for
 practice and competition.
 
-.. button-link:: https://docs.wpilib.org/en/latest/docs/zero-to-robot/introduction.html
+.. button-link:: {{ wpilib_docs_url }}docs/zero-to-robot/introduction.html
    :color: primary
    :outline:
 

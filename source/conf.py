@@ -35,3 +35,22 @@ intersphinx_timeout = 15
 linkcheck_timeout = 15
 linkcheck_retries = 2
 linkcheck_anchors = False
+
+
+# Published builds use WPILib's public root; local previews can override it.
+import os
+
+
+def resolve_wpilib_links(app, docname, source):
+    source[0] = source[0].replace(
+        "{{ wpilib_docs_url }}", app.config.wpilib_docs_url.rstrip("/") + "/"
+    )
+
+
+def setup(app):
+    app.add_config_value(
+        "wpilib_docs_url",
+        os.getenv("WPILIB_DOCS_URL", "https://docs.wpilib.org/en/latest/"),
+        "env",
+    )
+    app.connect("source-read", resolve_wpilib_links)

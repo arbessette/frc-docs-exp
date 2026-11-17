@@ -28,16 +28,14 @@ check the required host connection, power, driver, and software support.
 A matching connector alone does not establish compatibility.
 
 For CAN programming, use `Using CAN Devices in WPILib
-<https://docs.wpilib.org/en/latest/docs/software/can-devices/using-can-devices.html>`_.
+<{{ wpilib_docs_url }}docs/software/can-devices/using-can-devices.html>`_.
 
 Systemcore Connections
 ----------------------
 
-.. note::
-
-   Systemcore connection diagrams for these sensors are still being completed.
-   Check the sensor supply, signal levels, pinout, and interface against the
-   controller documentation before wiring.
+Use `Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_
+for controller connections. Check the sensor's electrical interface and the
+controller hardware revision before wiring.
 
 For code, use the `WPILib sensor guide
-<https://docs.wpilib.org/en/latest/docs/software/hardware-apis/sensors/sensor-overview-software.html>`_.
+<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html>`_.

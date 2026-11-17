@@ -3,9 +3,9 @@ Preparing for 2027
 
 Start with :doc:`../yearly-overview/2027-overview`, then check the
 `2027 WPILib changelog
-<https://docs.wpilib.org/en/latest/docs/yearly-overview/yearly-changelog.html>`_
+<{{ wpilib_docs_url }}docs/yearly-overview/yearly-changelog.html>`_
 and `known issues
-<https://docs.wpilib.org/en/latest/docs/yearly-overview/known-issues.html>`_.
+<{{ wpilib_docs_url }}docs/yearly-overview/known-issues.html>`_.
 
 Update sequence
 ---------------
@@ -19,7 +19,7 @@ Update sequence
 7. Review the software changes and test your robot before enabling it.
 
 Use `WPILib's returning-team checklist
-<https://docs.wpilib.org/en/latest/docs/yearly-overview/returning-quickstart.html>`_
+<{{ wpilib_docs_url }}docs/yearly-overview/returning-quickstart.html>`_
 for the detailed steps. Python teams should follow the Python setup and
 migration instructions for their release.
 
@@ -29,6 +29,7 @@ Check the hardware too
 Record the controller version, motor controllers, power distribution device,
 radio, and sensors on your robot. Check their connections against the
 instructions for that hardware. Systemcore wiring diagrams must match the installed hardware revision.
-See :doc:`step-1/basic-robot-wiring` for the wiring documentation status.
+Use the `Systemcore wiring guide in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+for controller connections.
 
 Continue with :doc:`index` for assembly and wiring resources.

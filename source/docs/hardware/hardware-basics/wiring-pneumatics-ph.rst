@@ -2,6 +2,7 @@ Wiring Pneumatics - REV Pneumatic Hub
 =====================================
 
 This page describes the REV Pneumatic Hub component connections.
+For the CTRE PCM, use :doc:`wiring-pneumatics-pcm`.
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here <https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf>`__
 
@@ -10,16 +11,9 @@ This page describes the REV Pneumatic Hub component connections.
 Systemcore Power and CAN Connections
 ------------------------------------
 
-.. note::
-
-   The Systemcore-to-Pneumatic-Hub wiring diagram is pending. It must identify
-   the power distribution connection, CAN connector pinout, and termination
-   for the installed hardware.
-
-Use the `REV Pneumatic Hub documentation
-<https://docs.revrobotics.com/ion-control-system/ph>`_ for module connections.
-The component instructions below do not replace the pending Systemcore wiring
-procedure.
+For the controller end of the connection, use the
+`Systemcore wiring guide in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
+Use the REV module documentation for the PH terminals and component wiring.
 
 Pneumatic Hub Component Connections
 -----------------------------------
@@ -32,8 +26,9 @@ Pneumatic Hub Component Connections
 
 Use the `REV Pneumatic Hub wiring guide
 <https://docs.revrobotics.com/ion-control/ph/gs/wiring>`_ for the component
-connections. The controller connection and bus termination still need the
-Systemcore instructions for your hardware revision.
+connections. For the controller connection and bus termination, use the
+`Systemcore CAN guide in WPILib
+<{{ wpilib_docs_url }}docs/software/systemcore-info/systemcore-can-wiring.html>`_.
 
 The Compressor
 --------------

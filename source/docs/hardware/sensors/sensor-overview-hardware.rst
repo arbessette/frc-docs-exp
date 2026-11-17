@@ -6,7 +6,7 @@ surrounding field. Choose the sensor and controller interface together,
 checking the documentation for both devices before making a connection.
 
 The `WPILib Systemcore introduction
-<https://docs.wpilib.org/en/latest/docs/software/systemcore-info/systemcore-introduction.html>`_ describes the controller interfaces.
+<{{ wpilib_docs_url }}docs/software/systemcore-info/systemcore-introduction.html>`_ describes the controller interfaces.
 
 Choose What You Need to Measure
 -------------------------------
@@ -35,30 +35,17 @@ Sensor function and electrical interface are separate choices. Two sensors
 that measure the same thing can use different signal voltages or buses.
 Check the sensor datasheet and Systemcore documentation before wiring.
 
-Specific Systemcore-compatible examples and wiring diagrams are still needed.
+Systemcore Connections
+----------------------
 
-Systemcore Sensor Wiring
-------------------------
-
-.. note::
-
-   Smart I/O pinouts, electrical compatibility, switch wiring, encoder
-   connections, and sensor bus diagrams are pending for the production
-   hardware. Wiring examples from other controllers are not included.
-
-Sensor Selection and Mounting
------------------------------
-
-.. note::
-
-   Systemcore-compatible sensor examples and mounting illustrations are
-   pending review.
+For controller pinouts, electrical compatibility, and sensor connections, use
+`Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_.
 
 Programming
 -----------
 
 Use the `WPILib sensor programming overview
-<https://docs.wpilib.org/en/latest/docs/software/hardware-apis/sensors/sensor-overview-software.html>`_
+<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html>`_
 for sensor classes and reading measurements in code.
 
 .. toctree::

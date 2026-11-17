@@ -3,7 +3,13 @@
 Wiring Best Practices
 =====================
 
-.. tip:: The article :doc:`Intro to FRC Robot Wiring </docs/zero-to-robot/step-1/intro-to-frc-robot-wiring>` walks through the details of what connects where to wire up the FRC Control System and this article provides some additional "Best Practices" that may increase reliability and make maintenance easier. Take a look at :external+wpilib:doc:`Preemptive Troubleshooting <docs/hardware/hardware-basics/preemptive-troubleshooting>` for more tips and tricks.
+.. tip::
+
+   For Systemcore connections, use the
+   `WPILib wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_.
+   Use this page for cable routing, strain relief, and maintenance practices,
+   then follow the :doc:`physical inspection checklist <preemptive-troubleshooting>`.
+
 
 Vibration/Shock
 ---------------
