@@ -1,40 +1,27 @@
-FIRST Robotics Competition
+FIRST Robotics Competition Documentation
 ==========================
 
-.. rubric:: Find the Right Documentation
+.. container:: frc-docs-chooser
 
-.. grid:: 1 1 3 3
-   :gutter: 3
+   .. rubric:: Find the Right Documentation
 
-   .. grid-item-card:: FRC Docs: Team, Hardware, and Vendor Resources
-      :link: docs/hardware/index
-      :link-type: doc
-      :class-card: sw-card-frc
+   .. grid:: 1 3 3 3
+      :gutter: 2
 
-      Find FRC hardware guides, assembly and wiring instructions, vendor
-      links, and team resources in FRC Docs.
+      .. grid-item-card:: WPILib · Program
+         :link: {{ wpilib_docs_url }}docs/zero-to-robot/introduction.html
+         :link-type: url
+         :class-card: sw-card-shared
 
-      +++
-      Browse FRC Docs →
+      .. grid-item-card:: FRC · Build & Prepare
+         :link: docs/hardware/index
+         :link-type: doc
+         :class-card: sw-card-frc
 
-   .. grid-item-card:: WPILib: Systemcore and Robot Programming
-      :link: {{ wpilib_docs_url }}docs/zero-to-robot/introduction.html
-      :link-type: url
-      :class-card: sw-card-shared
-
-      Set up Systemcore, write robot code, and learn how to test and debug it.
-      You'll also find links to hardware guides and vendor documentation.
-
-   .. grid-item-card:: FTC Docs: Hardware and Setup and more
-      :link: https://ftc-docs.firstinspires.org/en/latest/
-      :link-type: url
-      :class-card: frc-site-ftc
-
-      Find FTC assembly and wiring guides, plus setup and programming help
-      for the REV control system. For Systemcore programming, use WPILib docs.
-
-      +++
-      Browse FTC Docs →
+      .. grid-item-card:: FTC · Build & Set Up
+         :link: https://ftc-docs.firstinspires.org/en/latest/
+         :link-type: url
+         :class-card: frc-site-ftc
 
 Build, wire, and prepare your robot.
 
@@ -65,11 +52,11 @@ Build, wire, and prepare your robot.
       .. grid-item::
          :columns: 12 12 4 4
 
-         .. figure:: docs/start-here/77E6B4B8-C559-4421-A86B-8947A357BF4D.png
-            :alt: Top view of a six-wheel Kitbot drivetrain with four motors and a mounted battery.
+         .. figure:: docs/controls-overviews/images/control-system-hardware/systemcore.png
+            :alt: Limelight Systemcore robot controller.
             :width: 260
 
-            Kitbot drivetrain, viewed from above.
+            Systemcore controller. Photo courtesy of Limelight.
 
 .. rubric:: From Build to Driving
 
@@ -88,14 +75,14 @@ Build, wire, and prepare your robot.
       :link-type: url
       :class-card: frc-home-step
 
-      Connect Systemcore, motors, and CAN in WPILib.
+      Connect Systemcore and all electronics.
 
    .. grid-item-card:: 03 · Inspect
       :link: docs/hardware/hardware-basics/preemptive-troubleshooting
       :link-type: doc
       :class-card: frc-home-step
 
-      Check mounting and wiring before powered tests.
+      Check mounting and wiring before powereing on
 
    .. grid-item-card:: 04 · Program →
       :link: {{ wpilib_docs_url }}docs/zero-to-robot/introduction.html
