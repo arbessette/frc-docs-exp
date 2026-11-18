@@ -1,27 +1,43 @@
 FIRST Robotics Competition Documentation
-==========================
+========================================
 
-.. container:: frc-docs-chooser
+.. rubric:: Find the Right Documentation
 
-   .. rubric:: Find the Right Documentation
+.. grid:: 1 1 3 3
+   :gutter: 3
 
-   .. grid:: 1 3 3 3
-      :gutter: 2
+   .. grid-item-card:: WPILib: Systemcore and Robot Programming
+      :link: {{ wpilib_docs_url }}docs/zero-to-robot/introduction.html
+      :link-type: url
+      :class-card: sw-card-shared
 
-      .. grid-item-card:: WPILib · Program
-         :link: {{ wpilib_docs_url }}docs/zero-to-robot/introduction.html
-         :link-type: url
-         :class-card: sw-card-shared
+      Set up Systemcore, write robot code, and learn how to test and debug it.
+      You'll also find links to hardware guides and vendor documentation.
 
-      .. grid-item-card:: FRC · Build & Prepare
-         :link: docs/hardware/index
-         :link-type: doc
-         :class-card: sw-card-frc
+      +++
+      Browse WPILib Docs →
 
-      .. grid-item-card:: FTC · Build & Set Up
-         :link: https://ftc-docs.firstinspires.org/en/latest/
-         :link-type: url
-         :class-card: frc-site-ftc
+   .. grid-item-card:: FTC Docs: Hardware and Setup and more
+      :link: https://ftc-docs.firstinspires.org/en/latest/
+      :link-type: url
+      :class-card: sw-card-ftc
+
+      Find FTC assembly and wiring guides, plus setup and programming help
+      for the REV control system. For Systemcore programming, use WPILib docs.
+
+      +++
+      Browse FTC Docs →
+
+   .. grid-item-card:: FRC Docs: Team, Hardware, and Vendor Resources
+      :link: docs/hardware/index
+      :link-type: doc
+      :class-card: sw-card-frc
+
+      Find FRC hardware guides, assembly and wiring instructions, vendor
+      links, and team resources in FRC Docs. **You are here.**
+
+      +++
+      Browse FRC Docs →
 
 Build, wire, and prepare your robot.
 
@@ -58,7 +74,7 @@ Build, wire, and prepare your robot.
 
             Systemcore controller. Photo courtesy of Limelight.
 
-.. rubric:: From Build to Driving
+.. rubric:: From Parts to Driving
 
 .. grid:: 1 2 4 4
    :gutter: 2

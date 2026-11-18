@@ -4,6 +4,8 @@
    :root {
      --frc:        #009CD7;   /* FIRST Process Blue */
      --frc-light:  #e6f6fc;
+     --ftc:        #e07000;
+     --ftc-light:  #fff3e0;
      --shared:     #2e7d32;   /* shared green */
      --shared-light: #f1f8f1;
    }
@@ -286,10 +288,11 @@
    a.sw-card-shared:hover { border-color:var(--shared); }
    .sw-card-err           { border-color:rgba(211,47,47,0.3); background:#fff5f5; }
 
-   /* sphinx-design's own .sd-card rule has equal specificity to .sw-card-frc/shared/rec
+   /* sphinx-design's own .sd-card rule has equal specificity to .sw-card-frc/ftc/shared/rec
       and loads after this stylesheet, so it silently wins the cascade on grid-item-card
       without this higher-specificity override. */
    .sd-card.sw-card-frc    { border-color:rgba(0,156,215,0.3); background:var(--frc-light); }
+   .sd-card.sw-card-ftc    { border-color:rgba(224,112,0,0.3); background:var(--ftc-light); }
    .sd-card.sw-card-rec    { border-color:var(--frc); background:var(--frc-light); }
    .sd-card.sw-card-shared { border-color:rgba(46,125,50,0.3); background:var(--shared-light); }
 
@@ -298,11 +301,13 @@
       above) plus uncolored text — so both the label and its background read
       grey without these overrides. The header gets a stronger tint than the
       body/title so it still reads as a distinct label bar, not one flat box. */
-   .sd-card.sw-card-frc    .sd-card-title { color:var(--frc); background:var(--frc-light); }
-   .sd-card.sw-card-rec    .sd-card-title { color:var(--frc); background:var(--frc-light); }
-   .sd-card.sw-card-shared .sd-card-title { color:var(--shared); background:var(--shared-light); }
+   .sd-card.sw-card-frc    .sd-card-title { color:var(--frc); background:transparent; }
+   .sd-card.sw-card-ftc    .sd-card-title { color:var(--ftc); background:transparent; }
+   .sd-card.sw-card-rec    .sd-card-title { color:var(--frc); background:transparent; }
+   .sd-card.sw-card-shared .sd-card-title { color:var(--shared); background:transparent; }
 
    .sd-card.sw-card-frc    .sd-card-header { color:var(--frc); background:rgba(0,156,215,0.12); border-bottom-color:rgba(0,156,215,0.3); }
+   .sd-card.sw-card-ftc    .sd-card-header { color:var(--ftc); background:rgba(224,112,0,0.12); border-bottom-color:rgba(224,112,0,0.3); }
    .sd-card.sw-card-rec    .sd-card-header { color:var(--frc); background:rgba(0,156,215,0.12); border-bottom-color:rgba(0,156,215,0.3); }
    .sd-card.sw-card-shared .sd-card-header { color:var(--shared); background:rgba(46,125,50,0.12); border-bottom-color:rgba(46,125,50,0.3); }
 
@@ -412,6 +417,7 @@
 .sw-nav .sw-next p a:visited { color:#fff; }
 
 /* ── DARK MODE: replace light solid backgrounds with dark tinted versions ── */
+body[data-theme="dark"] .sw-card-ftc    { background: rgba(224, 112,   0, 0.12); }
 body[data-theme="dark"] .sw-card-shared { background: rgba( 46, 125,  50, 0.12); }
 body[data-theme="dark"] .sw-card-rec    { background: rgba(  0, 156, 215, 0.12); }
 body[data-theme="dark"] .sw-card-frc    { background: rgba(  0, 156, 215, 0.12); }

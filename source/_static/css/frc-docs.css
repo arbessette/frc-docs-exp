@@ -5,23 +5,6 @@
 .sidebar-tree > .caption:first-child + ul > .toctree-l1 > ul > .toctree-l2 > label,
 .sidebar-tree > .caption:first-child + ul > .toctree-l1 > ul > .toctree-l2 > ul { display: revert; }
 
-/* Card titles share their card's theme-aware background. This also overrides
-   the fixed light tints on the shared WPILib component styles. */
-.sd-card .sd-card-body .sd-card-title {
-    background: transparent;
-    color: var(--color-foreground-primary);
-}
-
-/* Match the companion cards' subtle borders and background tint. */
-.sd-card.frc-site-ftc {
-    border: 1px solid rgba(224, 112, 0, 0.3);
-    background: color-mix(in srgb, #e07000 6%, var(--color-background-primary));
-}
-.sd-card.frc-site-ftc:hover {
-    border-color: rgba(224, 112, 0, 0.65);
-    box-shadow: 0 2px 8px rgba(224, 112, 0, 0.12);
-}
-
 /* Homepage: blue for the build path and green for software handoffs. */
 .frc-home-start {
     padding: 1.5rem;

@@ -17,6 +17,10 @@ templates_path = ["_templates"]
 html_static_path = ["_static"]
 html_css_files = ["css/wpilib-rtd.css", "css/sw-components.css", "css/frc-docs.css"]
 html_theme_options = {
+    "announcement": (
+        "FRC Docs is currently being split from WPILib docs, please report any issues on "
+        '<a href="https://github.com/wpilibsuite/frc-docs/issues">GitHub</a>.'
+    ),
     "light_css_variables": {
         "color-sidebar-background": "#003974",
         "color-sidebar-brand-text": "#ffffffcc",
