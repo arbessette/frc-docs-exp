@@ -1,4 +1,4 @@
-"""FRC Docs: local prototype using the WPILib Furo design."""
+"""FRC Documentation using the WPILib Furo design."""
 project = "FIRST Robotics Competition"
 author = "FRC Docs contributors"
 copyright = "2026, FRC Docs contributors; CC BY 4.0"
@@ -17,7 +17,6 @@ templates_path = ["_templates"]
 html_static_path = ["_static"]
 html_css_files = ["css/wpilib-rtd.css", "css/sw-components.css", "css/frc-docs.css"]
 html_theme_options = {
-    "announcement": "<strong>DRAFT</strong> under review",
     "light_css_variables": {
         "color-sidebar-background": "#003974",
         "color-sidebar-brand-text": "#ffffffcc",

@@ -1,5 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/amanda-frc-docs/badge/?version=latest)](https://amanda-frc-docs.readthedocs.io/en/latest/)
-[![CI](https://github.com/arbessette/frc-docs/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/arbessette/frc-docs/actions/workflows/docs.yml)
+[![CI](https://github.com/wpilibsuite/frc-docs/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/wpilibsuite/frc-docs/actions/workflows/docs.yml)
 
 # frc-docs
 
@@ -12,14 +11,13 @@ Assets such as the *FIRST* logo remain under the trademark and copyright of
 [FIRST](https://www.firstinspires.org/). Content and styling adapted from WPILib
 Documentation are credited in [About FRC Documentation](source/about.rst).
 
-The draft website will be available at:
-
-- https://amanda-frc-docs.readthedocs.io/en/latest/
+FRC Docs is part of [WPILib Suite](https://github.com/wpilibsuite), maintained in
+[wpilibsuite/frc-docs](https://github.com/wpilibsuite/frc-docs).
 
 # FRC Documentation Mission
 
 Help FIRST Robotics Competition teams build, wire, inspect, and prepare their
-robots using clear hardware guidance and manufacturer references. These draft
+robots using clear hardware guidance and manufacturer references. These
 articles cover Systemcore robots; previous-controller procedures remain in the
 legacy WPILib documentation. Unverified hardware details are marked explicitly.
 Use official FIRST season documents for competition requirements.
