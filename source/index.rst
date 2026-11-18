@@ -68,11 +68,11 @@ Build, wire, and prepare your robot.
       .. grid-item::
          :columns: 12 12 4 4
 
-         .. figure:: docs/controls-overviews/images/control-system-hardware/systemcore.png
-            :alt: Limelight Systemcore robot controller.
+         .. figure:: docs/start-here/77E6B4B8-C559-4421-A86B-8947A357BF4D.png
+            :alt: Top view of a six-wheel Kitbot drivetrain with four motors and a mounted battery.
             :width: 260
 
-            Systemcore controller. Photo courtesy of Limelight.
+            Kitbot drivetrain, viewed from above.
 
 .. rubric:: From Parts to Driving
 
