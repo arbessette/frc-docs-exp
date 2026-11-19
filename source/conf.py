@@ -18,7 +18,8 @@ html_static_path = ["_static"]
 html_css_files = ["css/wpilib-rtd.css", "css/sw-components.css", "css/frc-docs.css"]
 html_theme_options = {
     "announcement": (
-        "FRC Docs is currently being split from WPILib docs, please report any issues on "
+        "You’re on the new FRC Docs site. Please report any issues you encounter "
+        "during the transition on "
         '<a href="https://github.com/wpilibsuite/frc-docs/issues">GitHub</a>.'
     ),
     "light_css_variables": {
