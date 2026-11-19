@@ -12,7 +12,6 @@ FIRST Robotics Competition Documentation
       :class-card: sw-card-shared
 
       Set up Systemcore, write robot code, and learn how to test and debug it.
-      You'll also find links to hardware guides and vendor documentation.
 
       +++
       Browse WPILib Docs →
@@ -53,8 +52,7 @@ Build, wire, and prepare your robot.
 
          .. rubric:: Build your robot. Get it driving.
 
-         Start with chassis assembly and electronics mounting. Follow the four
-         steps below through wiring, inspection, and your first program.
+         Start with chassis assembly and electronics mounting.
 
          .. button-ref:: docs/zero-to-robot/index
             :color: primary
@@ -174,6 +172,7 @@ For previous FRC control systems, use the
    :caption: Robot References
 
    docs/hardware/index
+   Introduction to FRC Robot Wiring <docs/zero-to-robot/step-1/basic-robot-wiring>
    docs/vendors/index
    docs/assembly/index
    docs/competition/index

@@ -1,33 +1,35 @@
+.. include:: <isonum.txt>
+
 Triangulating Rangefinders
 ==========================
 
-Triangulating rangefinders estimate distance from the position of reflected
-light on a detector. Many use infrared light. This differs from measuring the
-travel time of a light pulse.
 
-.. figure:: images/triangulating-rangefinders/infrared-proximity-sensor.png
-   :alt: Sharp infrared triangulating rangefinder with its connector visible.
-   :width: 350
+.. image:: images/triangulating-rangefinders/infrared-proximity-sensor.png
+   :alt: Sharp-brand triangulating rangefinder.
 
-   Infrared triangulating rangefinder.
+Triangulating rangefinders (often called "IR rangefinders," as they commonly function in the infrared wavelength band) are another common type of rangefinder used in FRC\ |reg|. The sensor shown above is a `common Sharp-brand sensor <https://www.sparkfun.com/products/242>`__
 
-Using the Measurement
+Unlike :doc:`LIDAR <lidar>`, triangulating rangefinders do not measure the time between the emission of a pulse and the receiving of a reflection.  Rather, most IR rangefinders work by emitting a constant beam at a slight angle, and measuring the position of the reflected beam.  The closer the point of contact of the reflected beam to the emitter, the closer the object to the sensor.
+
+Using IR rangefinders
 ---------------------
 
-Check the sensor's working range and output curve. An analog output should
-not be assumed to change linearly with distance. Use the manufacturer's curve
-or a measured calibration when converting a reading into distance.
+Caveats
+-------
 
-Test the sensor with the target material, angle, and lighting expected on the
-robot. Keep the emitter and receiver unobstructed. See
-:doc:`analog-inputs-hardware` for analog interface planning.
 
-Systemcore Connections
-----------------------
+IR rangefinders suffer similar drawbacks to 1D LIDAR sensors - they are very sensitive to the reflectivity of the target in the wavelength of the emitted laser.
 
-Use `Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_
-for controller connections. Check the sensor's electrical interface and the
-controller hardware revision before wiring.
+Additionally, while IR rangefinders tend to offer better resolution than LIDAR sensors when measuring at short distances, they are also usually more sensitive to differences in orientation of the target, *especially* if the target is highly-reflective (such as a mirror).
 
-For code, use the `WPILib sensor guide
-<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html>`_.
+.. note:: Systemcore scope
+
+   The wording above is retained from the upstream article. Controller-specific
+   material and illustrations that do not apply to this site's Systemcore scope
+   are excluded rather than relabeled. Use the
+   `Systemcore wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+   for the installed revision's connection requirements.
+
+Source: `WPILib upstream, 2f175339
+<https://github.com/wpilibsuite/wpilib-docs/blob/2f175339ca2f66bdd8b733eb5832d9ab9291f1c1/source/docs/hardware/sensors/triangulating-rangefinders.rst>`_,
+`CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__.

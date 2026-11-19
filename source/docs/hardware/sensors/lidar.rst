@@ -1,49 +1,59 @@
-Lidar - Hardware
+.. include:: <isonum.txt>
+
+LIDAR - Hardware
 ================
 
-Lidar uses emitted light and its return to measure distance. The measurement
-can help detect objects or map the area around a robot.
 
-Single-direction Sensors
-------------------------
+LIDAR (light detection and ranging) sensors are a variety of rangefinder seeing increasing use in FRC\ |reg|.
 
-.. figure:: images/lidar/1-dimentional-lidar.png
-   :alt: Garmin LIDAR-Lite sensor and attached cable.
-   :width: 300
+LIDAR sensors work by emitting a laser pulse and measuring the time until the pulse bounces back. From the measured time and the speed of light, it is possible to calculate the distance to the target.
 
-   Single-direction lidar sensor.
+Types of LIDAR
+--------------
 
-A single-direction sensor measures along its beam. Check its minimum and
-maximum range, field of view, update rate, and communication interface.
 
-Scanning Sensors
-----------------
+There are two types of LIDAR sensors commonly used in current FRC: 1-dimensional LIDAR, and 2-dimensional LIDAR.
 
-.. figure:: images/lidar/2-dimentional-lidar.png
-   :alt: RPLIDAR scanning sensor.
-   :width: 300
+1-Dimensional LIDAR
+~~~~~~~~~~~~~~~~~~~
 
-   Scanning lidar sensor.
 
-A scanning sensor collects measurements across a plane. The program must
-handle a set of range readings rather than one distance. Check the scan rate,
-angular resolution, and available software support.
+.. image:: images/lidar/1-dimentional-lidar.png
+   :alt: Garmin LIDAR-Lite a 1D LIDAR device.
 
-Choosing a Target
------------------
+A 1-dimensional (1D) LIDAR sensor works much like an ultrasonic sensor - it measures the distance to the nearest object more or less along a line in front of it.  1D LIDAR sensors can often be more-reliable than ultrasonics, as they have narrower "beam profiles" and are less susceptible to interference. Pictured above is the `Garmin LIDAR-Lite Optical Distance Sensor <https://www.andymark.com/products/lidar-lite-3>`__.
 
-Reflectivity, transparent surfaces, target angle, and distance can affect the
-reading. Test with the actual objects you want to detect. More distant targets
-also have wider spacing between samples at a fixed angular resolution.
+2-Dimensional LIDAR
+~~~~~~~~~~~~~~~~~~~
 
-See :doc:`serial-buses` for communication choices.
 
-Systemcore Connections
-----------------------
+.. image:: images/lidar/2-dimentional-lidar.png
+   :alt: RPLIDAR pictured is one option for 2D LIDAR
 
-Use `Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_
-for controller connections. Check the sensor's electrical interface and the
-controller hardware revision before wiring.
+A 2-dimensional (2D) LIDAR sensor measures distance in all directions in a plane.  Generally, this is accomplished (more-or-less) by simply placing a 1D LIDAR sensor on a turntable that spins at a constant rate.
 
-For code, use the `WPILib sensor guide
-<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html>`_.
+Caveats
+-------
+
+
+LIDAR sensors do suffer from a few common drawbacks:
+
+Like ultrasonics, LIDAR relies on the reflection of the emitted pulse back to the sensor.  Thus, LIDAR critically depends on the reflectivity of the material in the wavelength of the laser.  The FRC field wall is made of polycarbonate, which tends to be transparent in the infrared wavelength (which is what is generally legal for FRC use).  Thus, LIDAR tends to struggle to detect the field barrier.
+
+2D LIDAR sensors (at the price range legal for FRC use) tend to be quite noisy, and processing their measured data (known as a "point cloud") can involve a lot of complex software.  Additionally, there are very few 2D LIDAR sensors made specifically for FRC, so software support tends to be scarce.
+
+As 2D LIDAR sensors rely on a turntable to work, their update rate is limited by the rate at which the turntable spins.  For sensors in the price range legal for FRC, this often means that they do not update their values particularly quickly, which can be a limitation when the robot (or the targets) are moving.
+
+Additionally, as 2D LIDAR sensors are limited in *angular* resolution, the *spatial* resolution of the point cloud is worse when targets are further away.
+
+.. note:: Systemcore scope
+
+   The wording above is retained from the upstream article. Controller-specific
+   material and illustrations that do not apply to this site's Systemcore scope
+   are excluded rather than relabeled. Use the
+   `Systemcore wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+   for the installed revision's connection requirements.
+
+Source: `WPILib upstream, 2f175339
+<https://github.com/wpilibsuite/wpilib-docs/blob/2f175339ca2f66bdd8b733eb5832d9ab9291f1c1/source/docs/hardware/sensors/lidar.rst>`_,
+`CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__.

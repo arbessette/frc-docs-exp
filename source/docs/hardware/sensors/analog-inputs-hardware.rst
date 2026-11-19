@@ -1,27 +1,58 @@
 Analog Inputs - Hardware
 ========================
 
-An analog sensor reports a measurement as a changing voltage. Potentiometers
-and some distance or acceleration sensors use analog outputs.
 
-Check the Electrical Range
---------------------------
+.. note:: This section covers analog input hardware.  For a software guide to analog inputs, see `Analog Inputs - Software <{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/analog-inputs-software.html#analog-inputs-software>`__.
 
-Check both the sensor supply and its possible signal-voltage range. The
-sensor's output must match the controller input's limits, including at the
-ends of the sensor's measurement range. The supply rating and signal range
-are not necessarily the same thing.
+An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The Systemcore's analog input ports allow the measurement of analog signals with values from 0V to 3.3V.
 
-A multi-axis sensor may have a separate analog signal for each axis. Record
-which input reads each signal. Use :doc:`analog-potentiometers-hardware` and
-:doc:`accelerometers-hardware` for examples of the measurements involved.
+In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the Systemcore).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.
 
-Systemcore Connections
-----------------------
+Analog inputs are typically used with sensors that produce continuously varying measurements. :doc:`Potentiometers <analog-potentiometers-hardware>` are a good example, as they can communicate by outputting a voltage proportional to their measurements.
 
-Use `Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_
-for controller connections. Check the sensor's electrical interface and the
-controller hardware revision before wiring.
+Connecting to Systemcore analog input ports
+-------------------------------------------
 
-For code, use the `WPILib sensor guide
-<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/analog-inputs-software.html>`_.
+.. warning:: **Never** directly connect the power pin to the ground pin on any port on the Systemcore!  This will trigger protection features on the Systemcore and may result in unexpected behavior.
+
+.. image:: images/systemcore/systemcore-smartio.png
+   :alt: The Systemcore, with the location of the Smart I/O ports highlighted.
+
+The Systemcore has 6 Smart I/O ports (numbered 0-5), as seen in the image above.  Each port has three pins - signal, power ("3.3V"), and ground ("gnd").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the analog input ports - there is a constant 3.3V potential difference between the "power" and the "ground" pins [2]_.  The signal pin is the pin on which the signal is actually measured.
+
+Connecting a sensor to a single analog input port
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. note:: Some sensors (such as :doc:`potentiometers <analog-potentiometers-hardware>`) may have interchangeable power and ground connections.
+
+Most analog sensors will have three wires - signal, power, and ground - corresponding precisely to the three pins of the Smart  I/O ports. They should be connected accordingly.
+
+.. note:: Update above image to use the Systemcore Smart I/O ports.
+
+Connecting a sensor to multiple analog input ports
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Some sensors may need to connect to multiple analog input ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed. The image below is shows an analog accelerometer that requires three analog input ports, but similar wiring can be used for analog sensors requiring two analog input ports.
+
+.. note:: Update above image to use the Systemcore Smart I/O ports.
+
+Footnotes
+---------
+
+
+.. [1] A 12-bit resolution yields :math:`2^{12}`, or 4096 different values.  For a 3.3V range, that's an effective resolution of approximately 0.8 mV, or .0008V.  The actual accuracy of the measurement will be less, so the discretization is not the limiting factor in the measurement accuracy.
+.. [2] All power pins are actually connected to a single rail, as are all ground pins - there is no need to use the power/ground pins corresponding to a given signal pin.
+
+.. note:: Systemcore scope
+
+   The wording above is retained from the upstream article. Controller-specific
+   material and illustrations that do not apply to this site's Systemcore scope
+   are excluded rather than relabeled. Use the
+   `Systemcore wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+   for the installed revision's connection requirements.
+
+Source: `WPILib upstream, 2f175339
+<https://github.com/wpilibsuite/wpilib-docs/blob/2f175339ca2f66bdd8b733eb5832d9ab9291f1c1/source/docs/hardware/sensors/analog-inputs-hardware.rst>`_,
+`CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__.

@@ -1,69 +1,63 @@
-Sensors on Systemcore
-=====================
+.. include:: <isonum.txt>
 
-Sensors provide feedback about mechanism position, robot motion, and the
-surrounding field. Choose the sensor and controller interface together,
-checking the documentation for both devices before making a connection.
+Sensor Overview - Hardware
+==========================
 
-The `WPILib Systemcore introduction
-<{{ wpilib_docs_url }}docs/software/systemcore-info/systemcore-introduction.html>`_ describes the controller interfaces.
 
-Choose What You Need to Measure
--------------------------------
+.. note:: This section covers sensor hardware, not the use of sensors in code. For a software sensor guide, see `Sensor Overview - Software <{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html#sensor-overview-software>`__.
 
-Start with the measurement your mechanism or drivetrain needs, then check
-how the sensor connects to your controller or motor controller.
+In order to be effective, it is often vital for robots to be able to gather information about their surroundings.  Devices that provide feedback to the robot on the state of its environment are called "sensors."  There are a large variety of sensors available, for measuring everything from on-field positioning to robot orientation to motor/mechanism positioning.  Making use of sensors is an absolutely crucial skill for on-field success; while most games do have tasks that can be accomplished by a "blind" robot, the best robots rely heavily on sensors to accomplish game tasks as quickly and reliably as possible.
 
-.. list-table:: Common sensor choices
-   :header-rows: 1
-   :widths: 35 65
+Additionally, sensors can be extremely important for robot safety - many robot mechanisms are capable of breaking themselves if used incorrectly.  Sensors provide a safeguard against this, allowing robots to, for example, disable a motor if a mechanism is against a hard-stop.
 
-   * - Measurement
-     - Sensor types to consider
-   * - Mechanism at a stop or an object present
-     - Mechanical, magnetic, inductive, or photoelectric proximity switches.
-   * - Shaft position or speed
-     - Encoders; potentiometers can measure position over a limited rotation.
-   * - Distance to an object
-     - Ultrasonic, infrared, or lidar rangefinders.
-   * - Rotation or heading
-     - Gyroscopes and inertial measurement units (IMUs).
-   * - Acceleration
-     - Accelerometers, either separate or included in an IMU.
+Types of Sensors
+----------------
 
-Sensor function and electrical interface are separate choices. Two sensors
-that measure the same thing can use different signal voltages or buses.
-Check the sensor datasheet and Systemcore documentation before wiring.
 
-Systemcore Connections
-----------------------
+Sensors can be generally categorized in two different ways: by function, and by communication protocol.  The former categorization is relevant for robot design; the latter for wiring and programming.
 
-For controller pinouts, electrical compatibility, and sensor connections, use
-`Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_.
+Sensors by Function
+~~~~~~~~~~~~~~~~~~~
 
-Programming
------------
 
-Use the `WPILib sensor programming overview
-<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html>`_
-for sensor classes and reading measurements in code.
+Sensors can provide feedback on a variety of different aspects of the robot's state:
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Sensor Types
+- :doc:`Proximity switches <proximity-switches>`
+   * Mechanical proximity switches ("limit switches")
+   * Magnetic proximity switches
+   * Inductive proximity switches
+   * Photoelectric proximity switches
 
-   proximity-switches
-   encoders-hardware
-   analog-potentiometers-hardware
-   gyros-hardware
-   accelerometers-hardware
-   lidar
-   triangulating-rangefinders
+- Distance sensors
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Electrical Interfaces
+   * :doc:`Triangulating rangefinders <triangulating-rangefinders>`
+   * :doc:`LIDAR <lidar>`
 
-   analog-inputs-hardware
-   digital-inputs-hardware
-   serial-buses
+- Shaft rotation sensors
+   * :doc:`Encoders <encoders-hardware>`
+   * :doc:`Potentiometers <analog-potentiometers-hardware>`
+
+- :doc:`Accelerometers <accelerometers-hardware>`
+
+- :doc:`Gyroscopes <gyros-hardware>`
+
+Sensors by Communication Protocol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :doc:`Analog input <analog-inputs-hardware>`
+- :doc:`Digital input <digital-inputs-hardware>`
+- :doc:`Serial bus <serial-buses>`
+
+In general, support for sensors that communicate via analog and digital inputs is straightforward, while communication over serial bus can be more complicated.
+
+.. note:: Systemcore scope
+
+   The wording above is retained from the upstream article. Controller-specific
+   material and illustrations that do not apply to this site's Systemcore scope
+   are excluded rather than relabeled. Use the
+   `Systemcore wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+   for the installed revision's connection requirements.
+
+Source: `WPILib upstream, 2f175339
+<https://github.com/wpilibsuite/wpilib-docs/blob/2f175339ca2f66bdd8b733eb5832d9ab9291f1c1/source/docs/hardware/sensors/sensor-overview-hardware.rst>`_,
+`CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__.

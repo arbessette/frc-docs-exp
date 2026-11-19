@@ -1,34 +1,32 @@
+.. include:: <isonum.txt>
+
 Analog Potentiometers - Hardware
 ================================
 
-A potentiometer is a variable resistor. Used as a voltage divider, it produces
-an analog voltage that changes as its shaft turns. A robot can use that
-measurement to track a mechanism's position.
 
-Mounting
---------
+.. note:: This section covers analog potentiometer hardware.  For a software guide to analog potentiometers, see `Analog Potentiometers - Software <{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/analog-potentiometers-software.html#analog-potentiometers-software>`__.
 
-Many potentiometers have a limited mechanical travel. Arrange the coupling
-so the mechanism cannot drive the sensor beyond that travel. Check the shaft
-alignment and support so the sensor does not carry unintended loads.
+.. warning:: Potentiometers generally have a mechanically-limited travel range.  Users should be careful that their mechanisms do not turn their potentiometers past their maximum travel, as this will damage or destroy the potentiometer.
 
-Reading Position
-----------------
+Apart from :doc:`quadrature encoders <encoders-hardware>`, another common way of measuring rotation is with analog potentiometers.  A potentiometer is simply a variable resistor - as the shaft of the potentiometer turns, the resistance changes (usually linearly).  Placing this resistor in a `voltage divider <https://en.wikipedia.org/wiki/Voltage_divider>`__ allows the user to easily measure the resistance by measuring the voltage across the potentiometer, which can then be used to calculate the rotational position of the shaft.
 
-The wiper provides the changing signal. Check the manufacturer's terminal
-identification, supply requirements, and output range before wiring. The
-signal must stay within the controller input's allowed range throughout the
-mechanism's travel. See :doc:`analog-inputs-hardware`.
+Wiring an analog potentiometer
+------------------------------
 
-Check which direction makes the reading increase before calibrating position
-in the robot program.
+Footnotes
+---------
 
-Systemcore Connections
-----------------------
 
-Use `Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_
-for controller connections. Check the sensor's electrical interface and the
-controller hardware revision before wiring.
+The way this actually works is generally by having the shaft control the position of a contact along a resistive "wiper" of fixed length along which the current flows - the resistance is proportional to the length of wiper between the contact and the end of the wiper.
 
-For code, use the `WPILib sensor guide
-<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/analog-potentiometers-software.html>`_.
+.. note:: Systemcore scope
+
+   The wording above is retained from the upstream article. Controller-specific
+   material and illustrations that do not apply to this site's Systemcore scope
+   are excluded rather than relabeled. Use the
+   `Systemcore wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+   for the installed revision's connection requirements.
+
+Source: `WPILib upstream, 2f175339
+<https://github.com/wpilibsuite/wpilib-docs/blob/2f175339ca2f66bdd8b733eb5832d9ab9291f1c1/source/docs/hardware/sensors/analog-potentiometers-hardware.rst>`_,
+`CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__.

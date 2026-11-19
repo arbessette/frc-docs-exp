@@ -1,41 +1,53 @@
-Sensor Communication Buses
-==========================
+.. include:: <isonum.txt>
 
-A communication bus carries measurements and configuration data between
-devices. Some sensors use CAN, I2C, or USB instead of separate analog or
-digital measurement signals.
+Serial Buses
+============
 
-Choose the Interface
---------------------
+Both the digital and analog inputs are highly limited in the amount of data that can be sent over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as inertial measurement units (IMUs) or 2D LIDAR sensors.
 
-Check that the sensor and controller support the same electrical interface
-and protocol. Record the connector pinout, supply, device address or ID,
-and software needed to read the measurements.
+Types of supported serial buses
+-------------------------------
 
-CAN
+- `I2C`_
+- `USB Host`_
+- `CAN Bus`_
+
+I2C
 ---
 
-Devices on a CAN bus need the correct wiring and bus termination. See
-:doc:`/docs/hardware/hardware-basics/can-wiring-basics` for the Systemcore
-wiring documentation status. CAN IDs do not identify power distribution
-channels.
+To communicate to peripheral devices over :external+wpilib:term:`I2C`, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
-I2C and USB
------------
+USB Client
+----------
 
-Check device addresses and electrical requirements for I2C sensors. For USB,
-check the required host connection, power, driver, and software support.
-A matching connector alone does not establish compatibility.
+USB Host
+--------
 
-For CAN programming, use `Using CAN Devices in WPILib
-<{{ wpilib_docs_url }}docs/software/can-devices/using-can-devices.html>`_.
+CAN Bus
+-------
 
-Systemcore Connections
-----------------------
+One of the advantages of using the CAN bus protocol is that devices can be daisy-chained, as shown below. If power is removed from any device in the chain, data signals will still be able to reach all devices in the chain.
 
-Use `Systemcore wiring in WPILib <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html#sensor-connections>`_
-for controller connections. Check the sensor's electrical interface and the
-controller hardware revision before wiring.
+.. image:: images/serial-buses/can-bus-talon-srx-chain.png
+   :alt: A CAN bus topology between motor controllers.
 
-For code, use the `WPILib sensor guide
-<{{ wpilib_docs_url }}docs/software/hardware-apis/sensors/sensor-overview-software.html>`_.
+Several sensors primarily use the CAN bus. Some examples include:
+
+- `CAN Based Time-of-Flight Range/Distance Sensor from playingwithfusion.com <https://www.playingwithfusion.com/productview.php?pdid=96&catid=1009>`__
+- TalonSRX-based sensors, such as the `Gadgeteer Pigeon IMU  <https://store.ctr-electronics.com/gadgeteer-pigeon-imu/>`__ and the `SRX MAG Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
+- `CANifier <https://store.ctr-electronics.com/canifier/>`__
+- Power monitoring sensors built into the :ref:`CTRE Power Distribution Panel (PDP) <docs/controls-overviews/control-system-hardware:CTRE Power Distribution Panel>` and the :ref:`REV Power Distribution Hub (PDH) <docs/controls-overviews/control-system-hardware:REV Power Distribution Hub>`
+
+More information about using devices connected to the CAN bus can be found in the article about `using can devices <{{ wpilib_docs_url }}docs/software/can-devices/using-can-devices.html#using-can-devices>`__.
+
+.. note:: Systemcore scope
+
+   The wording above is retained from the upstream article. Controller-specific
+   material and illustrations that do not apply to this site's Systemcore scope
+   are excluded rather than relabeled. Use the
+   `Systemcore wiring guide <{{ wpilib_docs_url }}docs/zero-to-robot/systemcore-wiring.html>`_
+   for the installed revision's connection requirements.
+
+Source: `WPILib upstream, 2f175339
+<https://github.com/wpilibsuite/wpilib-docs/blob/2f175339ca2f66bdd8b733eb5832d9ab9291f1c1/source/docs/hardware/sensors/serial-buses.rst>`_,
+`CC BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__.
